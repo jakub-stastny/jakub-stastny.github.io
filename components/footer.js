@@ -1,20 +1,22 @@
-const template = document.createElement('template')
-template.innerHTML = `
-  <style>
-    background-color: lightblue;
-  </style>
+() => {
+  const template = document.createElement('template')
+  template.innerHTML = `
+    <style>
+      background-color: lightblue;
+    </style>
 
-  <footer>
-    <a href="/contact">Contact</a>
-  </footer>`
+    <footer>
+      <a href="/contact">Contact</a>
+    </footer>`
 
-customElements.define('Footer',
-  class extends HTMLElement {
-    constructor() {
-      super()
+  customElements.define('main-footer',
+    class extends HTMLElement {
+      constructor() {
+        super()
 
-      const shadowRoot = this.attachShadow({mode: 'open'})
-        .appendChild(template.content.cloneNode(true))
+        const shadowRoot = this.attachShadow({mode: 'open'})
+          .appendChild(template.content.cloneNode(true))
+      }
     }
-  }
-)
+  )
+}

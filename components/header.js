@@ -1,20 +1,22 @@
-const template = document.createElement('template')
-template.innerHTML = `
-  <style>
-    background-color: lightgreen;
-  </style>
+() => {
+  const template = document.createElement('template')
+  template.innerHTML = `
+    <style>
+      background-color: lightgreen;
+    </style>
 
-  <header>
-    <h1><a href="/">Jakub Šťastný</a></h1>
-  </header>`
+    <header>
+      <h1><a href="/">Jakub Šťastný</a></h1>
+    </header>`
 
-customElements.define('Header',
-  class extends HTMLElement {
-    constructor() {
-      super()
+  customElements.define('main-header',
+    class extends HTMLElement {
+      constructor() {
+        super()
 
-      const shadowRoot = this.attachShadow({mode: 'open'})
-        .appendChild(template.content.cloneNode(true))
+        const shadowRoot = this.attachShadow({mode: 'open'})
+          .appendChild(template.content.cloneNode(true))
+      }
     }
-  }
-)
+  )
+}
