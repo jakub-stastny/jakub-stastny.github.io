@@ -2,7 +2,7 @@
   const template = document.createElement('template')
   template.innerHTML = `
     <style>
-      background-color: lightgreen;
+      header { background-color: lightgreen; }
     </style>
 
     <header>
@@ -17,7 +17,7 @@
         const shadowRoot = this.attachShadow({mode: 'open'})
           .appendChild(template.content.cloneNode(true))
 
-        if (location.pathname === "/" || location.pathname === "/index.html") {
+        if (location.pathname === "/" || location.pathname === "/index.html") { // match("/(index.html)?")
           const link = shadowRoot.querySelector('#link')
           link.removeAttribute('href')
         }
