@@ -1,4 +1,4 @@
-/*const template = document.createElement('template')
+const template = document.createElement('template')
 template.innerHTML = `
   <style>
     background-color: lightblue;
@@ -17,4 +17,4 @@ customElements.define('Footer',
         .appendChild(template.content.cloneNode(true))
     }
   }
-)*/
+)
