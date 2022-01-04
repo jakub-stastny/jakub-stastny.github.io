@@ -16,8 +16,8 @@
 
         const shadowRoot = this.attachShadow({mode: 'open'})
           .appendChild(template.content.cloneNode(true))
-          console.log(this.getAttribute('root'))
-        if (this.getAttribute('root')) {
+
+        if (location.pathname === "/" || location.pathname === "/index.html") {
           const link = shadowRoot.querySelector('#link')
           link.removeAttribute('href')
         }
