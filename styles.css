@@ -1,4 +1,8 @@
 body {
   font-family: sans-serif;
-  background-color: #3C0A99;
+  background-color: #FFF9ED;
+}
+
+h1, h2, h3 {
+  color: #3C0A99;
 }
