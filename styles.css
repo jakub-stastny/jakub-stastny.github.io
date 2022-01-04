@@ -6,3 +6,9 @@ body {
 h1, h2, h3 {
   color: #3C0A99;
 }
+
+.leader {
+  margin-right: 10px;
+  margin-down: 10px;
+  float: left;
+}
