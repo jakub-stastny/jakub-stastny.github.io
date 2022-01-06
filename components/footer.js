@@ -12,7 +12,10 @@
       
       ul { list-style-type: none; }
       
-      li { display: inline-block; }
+      li {
+        display: inline-block;
+        padding-right: 50px;
+      }
       
       li img { height: 24px; }
     </style>
@@ -22,6 +25,7 @@
         <li><a href="mailto:jakub.stastny.pt+appointment@gmail.com"><img src="/img/email.svg" /></a></li>
         <li><a href="https://wa.me/message/46K3QXAUCRQDF1"><img src="/img/whatsapp.svg" /></a></li>
         <li><a href="https://t.me/jakubstastny"><img src="/img/telegram.svg" /></a></li>
+        <li><a href="imessage://jakub.stastny.pt@gmail.com"><img src="/img/imessage.svg" /></a></li>
       </ul>
     </footer>`
 
