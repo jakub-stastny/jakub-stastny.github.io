@@ -12,3 +12,27 @@ h1, h2, h3 {
   margin-down: 10px;
   float: left;
 }
+
+
+
+/* Ribbon https://codepen.io/eode9/pen/twkKm */
+
+.corner-ribbon {
+  width: 200px;
+  background: #e43;
+  position: absolute;
+  top: 25px;
+  right: -50px;
+  left: auto;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+  
+  position: fixed;
+}
