@@ -18,8 +18,7 @@
           .appendChild(template.content.cloneNode(true))
           
         if (location.pathname.match(/^\/contact(\.html)?/)) {
-          const link = this.shadowRoot.querySelector('#link')
-          link.removeAttribute('href')
+          this.shadowRoot.querySelector('#link').removeAttribute('href')
         }
       }
     }
