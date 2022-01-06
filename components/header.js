@@ -2,8 +2,8 @@
   const template = document.createElement('template')
   template.innerHTML = `
     <style>
-      header { background-color: lightgreen; }
-      #logo { width: 70%; }
+      header {  }
+      #logo { width: 50%; }
     </style>
 
     <header>

@@ -6,7 +6,11 @@ body {
 }
 
 h1, h2, h3 {
-  color: #3C0A99;
+  color: #2548AC;
+}
+
+main {
+  margin: 20px;
 }
 
 .leader {
@@ -21,15 +25,15 @@ h1, h2, h3 {
 
 .corner-ribbon {
   width: 280px;
-  background: #e43;
+  background: #A52921;
   position: absolute;
   top: 75px;
-  right: -50px;
+  right: -30px;
   left: auto;
   text-align: center;
   line-height: 50px;
   letter-spacing: 1px;
-  color: #f0f0f0;
+  color: white;
 
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
