@@ -36,3 +36,9 @@ h1, h2, h3 {
   
   position: fixed;
 }
+
+
+/* https://css-tricks.com/couple-takes-sticky-footer */
+.content {
+  min-height: calc(100vh - 70px);
+}

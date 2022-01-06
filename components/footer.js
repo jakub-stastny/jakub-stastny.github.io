@@ -2,7 +2,10 @@
   const template = document.createElement('template')
   template.innerHTML = `
     <style>
-      footer { background-color: lightblue; }
+      footer {
+        background-color: lightblue;
+        height: 50px;
+      }
     </style>
 
     <footer>
