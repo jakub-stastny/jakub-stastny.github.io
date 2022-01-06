@@ -14,11 +14,11 @@
       constructor() {
         super()
 
-        const shadowRoot = this.attachShadow({mode: 'open'})
+        this.attachShadow({mode: 'open'})
           .appendChild(template.content.cloneNode(true))
 
-        if (location.pathname.match(/^\/(index\.html)?$/))
-          const link = shadowRoot.querySelector('#link')
+        if (location.pathname.match(/^\/(index\.html)?$/)) {
+          const link = this.shadowRoot.querySelector('#link')
           link.removeAttribute('href')
         }
       }
