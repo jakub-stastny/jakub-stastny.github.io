@@ -18,10 +18,10 @@ h1, h2, h3 {
 /* Ribbon https://codepen.io/eode9/pen/twkKm */
 
 .corner-ribbon {
-  width: 200px;
+  width: 280px;
   background: #e43;
   position: absolute;
-  top: 25px;
+  top: 75px;
   right: -50px;
   left: auto;
   text-align: center;
