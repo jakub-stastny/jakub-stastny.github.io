@@ -3,13 +3,26 @@
   template.innerHTML = `
     <style>
       footer {
+        margin-top: 50px;
+        padding-top: 10px;
         background-color: lightblue;
-        height: 50px;
+        height: 40px;
+        text-align: center;
       }
+      
+      ul { list-style-type: none; }
+      
+      li { display: inline-block; }
+      
+      li img { height: 24px; }
     </style>
 
     <footer>
-      <a id="link" href="/contact">Contact</a>
+      <ul>
+        <li><a href="mailto:jakub.stastny.pt+appointment@gmail.com"><img src="/img/email.svg" /></a></li>
+        <li><a href="https://wa.me/message/46K3QXAUCRQDF1"><img src="/img/whatsapp.svg" /></a></li>
+        <li><a href="https://t.me/jakubstastny"><img src="/img/telegram.svg" /></a></li>
+      </ul>
     </footer>`
 
   customElements.define('main-footer',
@@ -19,10 +32,6 @@
 
         this.attachShadow({mode: 'open'})
           .appendChild(template.content.cloneNode(true))
-          
-        if (location.pathname.match(/^\/contact(\.html)?/)) {
-          this.shadowRoot.querySelector('#link').removeAttribute('href')
-        }
       }
     }
   )
