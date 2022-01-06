@@ -3,10 +3,13 @@
   template.innerHTML = `
     <style>
       header { background-color: lightgreen; }
+      #logo { width: 70%; }
     </style>
 
     <header>
-      <h1><a id="link" href="/">Jakub Šťastný</a></h1>
+      <a id="link" href="/">
+        <img id="logo" alt="Jakub Šťastný" src="/img/logo.png" />
+      </a>
     </header>`
 
   customElements.define('main-header',
