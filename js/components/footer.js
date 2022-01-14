@@ -5,6 +5,7 @@
       footer {
         margin-top: 50px;
         padding-top: 10px;
+        padding-bottom: 25px;
         background-color: lightblue;
         height: 40px;
         text-align: center;
