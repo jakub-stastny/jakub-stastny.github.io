@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="/styles.css" />
     <script src="/js/components/header.js"></script>
     <script src="/js/components/footer.js"></script>
+    <script src="/js/helpers.js"></script>
     <script src="/js/propagate-qs.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3"></script>
     <script>
-      const qs = Object.fromEntries(new URLSearchParams(window.location.search).entries())
       window.dataLayer = window.dataLayer || []
-      function gtag() { if (!qs.notrack) { dataLayer.push(arguments) }}
+      function gtag() { if (!noTrack) { dataLayer.push(arguments) }}
       gtag('js', new Date())
       gtag('config', 'G-KQSJ36RMR3')
     </script>
