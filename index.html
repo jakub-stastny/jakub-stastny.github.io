@@ -8,10 +8,14 @@
     <script src="/components/footer.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3"></script>
     <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() { dataLayer.push(arguments) }
-      gtag('js', new Date())
-      gtag('config', 'G-KQSJ36RMR3')
+      const urlSearchParams = new URLSearchParams(window.location.search)
+      const qs = Object.fromEntries(urlSearchParams.entries())
+      if (!qs.notrack) {
+        window.dataLayer = window.dataLayer || []
+        function gtag() { dataLayer.push(arguments) }
+        gtag('js', new Date())
+        gtag('config', 'G-KQSJ36RMR3')
+      }
     </script>
   </head>
 
