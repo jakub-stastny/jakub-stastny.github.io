@@ -16,6 +16,7 @@ main {
 .leader {
   margin-right: 10px;
   margin-down: 10px;
+  border-radius: 12px;
   float: left;
 }
 
@@ -39,6 +40,11 @@ main {
   -webkit-transform: rotate(45deg);
   
   box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+@media only screen and (max-device-width: 480px) {
+  /* For now disable on mobile. Too little space for this. */
+  .corner-ribbon { display: none; }
 }
 
 

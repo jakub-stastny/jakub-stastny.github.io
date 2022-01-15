@@ -6,7 +6,11 @@
         background: linear-gradient(PapayaWhip, #FFF9ED);
       }
 
-      #logo { width: 50%; }
+      #logo { width: 100%; }
+
+      @media only screen and (min-device-width: 480px) {
+        #logo { width: 50%; }
+      }
     </style>
 
     <header>

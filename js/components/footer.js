@@ -6,7 +6,7 @@
         margin: 0;
         padding-top: 10px;
         padding-bottom: 25px;
-        background: linear-gradient(#FFF9ED, LightBlue);
+        background: linear-gradient(#FFF9ED, 34%, LightBlue);
         height: 40px;
         text-align: center;
       }
