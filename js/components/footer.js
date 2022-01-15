@@ -3,7 +3,7 @@
   template.innerHTML = `
     <style>
       footer {
-        margin-top: 50px;
+        margin: 0;
         padding-top: 10px;
         padding-bottom: 25px;
         background-color: lightblue;
