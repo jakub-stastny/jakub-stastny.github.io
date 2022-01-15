@@ -47,6 +47,5 @@ main {
   min-height: calc(100vh - 150px);
 }
 
-.content main {
-  padding: 20px;
-}
+/* Main content, without the header. */
+.content main {}
