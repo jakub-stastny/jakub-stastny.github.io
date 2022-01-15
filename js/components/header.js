@@ -2,7 +2,10 @@
   const template = document.createElement('template')
   template.innerHTML = `
     <style>
-      header { background: PapayaWhip; }
+      header {
+        background: linear-gradient(PapayaWhip, #FFF9ED);
+      }
+
       #logo { width: 50%; }
     </style>
 
