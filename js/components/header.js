@@ -2,7 +2,7 @@
   const template = document.createElement('template')
   template.innerHTML = `
     <style>
-      header {  }
+      header { background: PapayaWhip; }
       #logo { width: 50%; }
     </style>
 

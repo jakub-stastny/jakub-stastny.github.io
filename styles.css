@@ -44,6 +44,9 @@ main {
 
 /* https://css-tricks.com/couple-takes-sticky-footer */
 .content {
-  padding: 20px;
   min-height: calc(100vh - 150px);
+}
+
+.content main {
+  padding: 20px;
 }
