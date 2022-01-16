@@ -29,7 +29,7 @@
         </li>
         <li><a href="https://t.me/jakubstastny"><img src="/img/telegram.svg" /></a></li>
         <li class="apple-platforms><a href="imessage://jakub.stastny.pt@gmail.com"><img src="/img/imessage.svg" /></a></li>
-        <li><a href="mailto:jakub.stastny.pt+appointment@gmail.com"><img src="/img/email.svg" /></a></li>
+        <li><a href="mailto:jakub.stastny.pt+web@gmail.com"><img src="/img/email.svg" /></a></li>
       </ul>
     </footer>`
 

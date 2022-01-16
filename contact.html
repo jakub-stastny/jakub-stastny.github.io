@@ -20,15 +20,29 @@
     <style>
       dl {
         display: grid;
-        grid-template-columns: max-content auto;
+        grid-template-columns: 35px max-content;
+        margin-top: 35px;
+        margin-left:35px;
       }
 
       dt {
         grid-column-start: 1;
+        margin-top: 2px;
+        margin-bottom: 2px;
       }
 
       dd {
         grid-column-start: 2;
+        margin: 0;
+      }
+
+      dd span {
+        font-weight: 550;
+      }
+      
+      .cards {
+        display: flex;
+        flex-direction: row;
       }
     </style>
   </head>
@@ -36,51 +50,63 @@
   <body>
     <div class="content"> <!-- Sticky footer -->
       <main-header></main-header>
-    
-	    <main>
-		    <p>
-          Hi! My name is Jakub Šťastný and I'm a <a href="/spiritual-guidance">spiritual guide</a> and <a href="/energy-healing">energy healer</a>.
-        </p>
-    
-        <p>
-          If you have any questions or if you want to book a session, feel free to get in touch:
-        </p>
 
-        <dl>
-          <dt><img height="24px" src="/img/whatsapp.svg" /></dt>
-          <dd>
-            <span class="name">WhatsApp</span>
-            <a href="https://wa.me/message/46K3QXAUCRQDF1">+502 5173 7288</a>
-          </dd>
+	    <main class="cards">
+        <div class="card">
+          <img class="leader" width="250px" src="/img/jakub.stastny.jpg" />
 
-          <dt><img height="24px" src="/img/messenger.svg" /></dt>
-          <dd>
-            <span class="name">Messenger</span>
-            <a href="https://m.me/jakub.stastny.524">m.me/jakub.stastny.524</a>
-          </dd>
+          <p>
+            Hi! My name is Jakub Šťastný and I'm a <a href="/spiritual-guidance">spiritual guide</a> and <a href="/energy-healing">energy healer</a>.
+          </p>
 
-          <dt><img height="24px" src="/img/telegram.svg" /></dt>
-          <dd>
-            <span class="name">Telegram</span>
-            <a href="https://t.me/jakubstastny">@jakubstastny</a>
-          </dd>
+          <p>
+            My style of work doesn't come from any existing method, I developed my techniques based on my own interactions with the spiritual world and "just knowing".
+          </p>
+
+          <p>
+            Over the years I helped people from many countries and backgrounds, predominantly in Mexico and Guatemala, where I spend most of my time.
+          </p>
           
-          <div class="apple-platforms">
-            <dt><img height="24px" src="/img/imessage.svg" /></dt>
+          <p>
+            I'm happy to answer any questions about my healings and guidance sessions, but also general questions. If you made your first contact with the other world and are confused or are passing through a difficult point in your life, feel free to drop me a message.
+          </p>
+        </div>
+
+        <div class="card">
+          <dl>
+            <dt><img height="24px" src="/img/whatsapp.svg" /></dt>
             <dd>
+              <span class="name">WhatsApp</span>
+              <a href="https://wa.me/message/46K3QXAUCRQDF1">+502 5173 7288</a>
+            </dd>
+
+            <dt><img height="24px" src="/img/messenger.svg" /></dt>
+            <dd>
+              <span class="name">Messenger</span>
+              <a href="https://m.me/jakub.stastny.524">m.me/jakub.stastny.524</a>
+            </dd>
+
+            <dt><img height="24px" src="/img/telegram.svg" /></dt>
+            <dd>
+              <span class="name">Telegram</span>
+              <a href="https://t.me/jakubstastny">@jakubstastny</a>
+            </dd>
+          
+            <dt class="apple-platforms"><img height="24px" src="/img/imessage.svg" /></dt>
+            <dd  class="apple-platforms">
               <span class="name">iMessage</span>
               <a href="imessage://jakub.stastny.pt@gmail.com">jakub.stastny.pt@gmail.com</a>
             </dd>
-          </div>
 
-          <dt><img height="24px" src="/img/email.svg" /></dt>
-          <dd>
-            <span class="name">Email</span>
-            <a href="mailto:jakub.stastny.pt+appointment@gmail.com">
-              jakub.stastny.pt+appointment@gmail.com
-            </a>
-          </dd>
-	      </dl>
+            <dt><img height="24px" src="/img/email.svg" /></dt>
+            <dd>
+              <span class="name">Email</span>
+              <a href="mailto:jakub.stastny.pt+web@gmail.com">
+              jakub.stastny.pt+web@gmail.com
+              </a>
+            </dd>
+	        </dl>
+        </div>
 	    </main>
     </div>
     
