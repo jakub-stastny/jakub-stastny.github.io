@@ -16,6 +16,21 @@
       gtag('js', new Date())
       gtag('config', 'G-KQSJ36RMR3')
     </script>
+    
+    <style>
+      dl {
+        display: grid;
+        grid-template-columns: max-content auto;
+      }
+
+      dt {
+        grid-column-start: 1;
+      }
+
+      dd {
+        grid-column-start: 2;
+      }
+    </style>
   </head>
 
   <body>
@@ -30,31 +45,42 @@
         <p>
           If you have any questions or if you want to book a session, feel free to get in touch:
         </p>
-    
-        <ul style="padding-left: 20px; list-style-type: none">
-          <li>
-            <img height="24px" src="/img/whatsapp.svg" />
+
+        <dl>
+          <dt><img height="24px" src="/img/whatsapp.svg" /></dt>
+          <dd>
+            <span class="name">WhatsApp</span>
             <a href="https://wa.me/message/46K3QXAUCRQDF1">+502 5173 7288</a>
-          </li>
-          <li>
-            <img height="24px" src="/img/messenger.svg" />
+          </dd>
+
+          <dt><img height="24px" src="/img/messenger.svg" /></dt>
+          <dd>
+            <span class="name">Messenger</span>
             <a href="https://m.me/jakub.stastny.524">m.me/jakub.stastny.524</a>
-          </li>
-          <li>
-            <img height="24px" src="/img/telegram.svg" />
+          </dd>
+
+          <dt><img height="24px" src="/img/telegram.svg" /></dt>
+          <dd>
+            <span class="name">Telegram</span>
             <a href="https://t.me/jakubstastny">@jakubstastny</a>
-          </li>
-          <li>
-            <img height="24px" src="/img/imessage.svg" />
-            <a href="imessage://jakub.stastny.pt@gmail.com">jakub.stastny.pt@gmail.com</a>
-          </li>
-          <li>
-            <img height="24px" src="/img/email.svg" />
+          </dd>
+          
+          <div class="apple-platforms">
+            <dt><img height="24px" src="/img/imessage.svg" /></dt>
+            <dd>
+              <span class="name">iMessage</span>
+              <a href="imessage://jakub.stastny.pt@gmail.com">jakub.stastny.pt@gmail.com</a>
+            </dd>
+          </div>
+
+          <dt><img height="24px" src="/img/email.svg" /></dt>
+          <dd>
+            <span class="name">Email</span>
             <a href="mailto:jakub.stastny.pt+appointment@gmail.com">
               jakub.stastny.pt+appointment@gmail.com
             </a>
-          </li>
-	      </ul>
+          </dd>
+	      </dl>
 	    </main>
     </div>
     
