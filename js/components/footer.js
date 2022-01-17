@@ -10,6 +10,10 @@
         height: 40px;
         text-align: center;
       }
+
+      @media only screen and (max-device-width: 480px) {
+        .email { display: none; }
+      }
       
       ul { list-style-type: none; }
       
@@ -29,7 +33,7 @@
         </li>
         <li><a href="https://t.me/jakubstastny"><img src="/img/telegram.svg" /></a></li>
         <li class="apple-platforms><a href="imessage://jakub.stastny.pt@gmail.com"><img src="/img/imessage.svg" /></a></li>
-        <li><a href="mailto:jakub.stastny.pt+web@gmail.com"><img src="/img/email.svg" /></a></li>
+        <li class="email"><a href="mailto:jakub.stastny.pt+web@gmail.com"><img src="/img/email.svg" /></a></li>
       </ul>
     </footer>`
 
