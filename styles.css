@@ -14,8 +14,8 @@ main {
 }
 
 .leader {
-  margin-right: 10px;
-  margin-down: 10px;
+  margin-right: 17px;
+  margin-down: 17px;
   border-radius: 12px;
   float: left;
 }
@@ -50,7 +50,7 @@ main {
 
 /* https://css-tricks.com/couple-takes-sticky-footer */
 .content {
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 135px);
 }
 
 /* Main content, without the header. */
