@@ -43,6 +43,11 @@ main {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.corner-ribbon a, .corner-ribbon a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
 @media only screen and (max-device-width: 480px) {
   /* For now disable on mobile. Too little space for this. */
   .corner-ribbon { display: none; }
