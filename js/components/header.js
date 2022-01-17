@@ -3,7 +3,7 @@
   template.innerHTML = `
     <style>
       header {
-        background: linear-gradient(PapayaWhip, #FFF9ED);
+        background: linear-gradient(#ffd899, #FFF9ED);
       }
 
       #logo { width: 100%; }

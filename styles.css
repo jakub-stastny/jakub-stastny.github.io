@@ -18,6 +18,7 @@ main {
   margin-down: 17px;
   border-radius: 12px;
   float: left;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 
@@ -38,8 +39,8 @@ main {
 
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  
-  box-shadow: 0 0 3px rgba(0,0,0,.3);
+
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 @media only screen and (max-device-width: 480px) {
