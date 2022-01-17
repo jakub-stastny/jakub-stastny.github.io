@@ -32,7 +32,7 @@
           <a href="https://m.me/jakubstastny.guide"><img height="24px" src="/img/messenger.svg" /></a>
         </li>
         <li><a href="https://t.me/jakubstastny"><img src="/img/telegram.svg" /></a></li>
-        <li class="apple-platforms><a href="imessage://jakub.stastny.pt@gmail.com"><img src="/img/imessage.svg" /></a></li>
+        <li class="apple-platforms><a href="imessage://jakubstastny.guide@gmail.com"><img src="/img/imessage.svg" /></a></li>
         <li class="email"><a href="mailto:jakubstastny.guide@gmail.com"><img src="/img/email.svg" /></a></li>
       </ul>
     </footer>`
