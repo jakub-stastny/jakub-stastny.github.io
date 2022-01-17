@@ -29,7 +29,7 @@
       <ul>
         <li><a href="https://wa.me/message/46K3QXAUCRQDF1"><img src="/img/whatsapp.svg" /></a></li>
         <li>
-          <a href="https://m.me/jakub.stastny.524"><img height="24px" src="/img/messenger.svg" /></a>
+          <a href="https://m.me/jakubstastny.guide"><img height="24px" src="/img/messenger.svg" /></a>
         </li>
         <li><a href="https://t.me/jakubstastny"><img src="/img/telegram.svg" /></a></li>
         <li class="apple-platforms><a href="imessage://jakub.stastny.pt@gmail.com"><img src="/img/imessage.svg" /></a></li>
