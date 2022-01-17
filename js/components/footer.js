@@ -14,14 +14,14 @@
       @media only screen and (max-device-width: 480px) {
         .email { display: none; }
       }
-      
+
       ul { list-style-type: none; }
-      
+
       li {
         display: inline-block;
         padding-right: 50px;
       }
-      
+
       li img { height: 24px; }
     </style>
 
