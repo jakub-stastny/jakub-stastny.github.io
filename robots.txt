@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /guidance-session-aftercare
+Disallow: /guidance-session-aftercare.html
+
+Disallow: /healing-session-aftercare
+Disallow: /healing-session-aftercare.html
