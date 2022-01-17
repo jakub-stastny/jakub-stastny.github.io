@@ -11,7 +11,7 @@ function rewriteLink(a, destination) {
 
 window.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('a').forEach(a => {
-    if (location.host.match(/^\d{3}\.\d+\.\d+\.\d+:\d+$/)) {
+    if (location.host.match(/^(\d{3}\.\d+\.\d+\.\d+|localhost):\d+$/)) {
       if (a.href.match(/^\/$/)) {
         // WorkingCopy server doesn't know how to deal with /.
         // FIXME ShadowRoot in header not matching.
