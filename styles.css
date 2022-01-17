@@ -29,9 +29,11 @@ main {
   width: 280px;
   background: #A52921;
   position: absolute;
-  top: 75px;
-  right: -30px;
+  top: 72px;
+  right: -65px;
   left: auto;
+
+  padding: 0 21px;
   text-align: center;
   line-height: 50px;
   letter-spacing: 1px;
