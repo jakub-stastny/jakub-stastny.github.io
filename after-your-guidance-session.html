@@ -22,14 +22,15 @@
     </script>
 
     <style>
-      ul { list-style-type: none; }
-
-      li {
-        display: inline-block;
-        padding-right: 50px;
+      .cards {
+        display: flex;
       }
 
-      li img { height: 24px; }
+      .card {
+        width: 250px;
+      }
+
+      .card img { height: 50px; }
     </style>
   </head>
 
@@ -50,15 +51,22 @@
         </ul>
 
         <h1>Stay in touch!</h1>
-
         <p style="font-style: italic">
           Being a digital neanderthal I post very scarcely and only when I actually have something to say.
         </p>
-        <ul>
-          <li>
-            <a href="http://fb.me/jakubstastny.guide"><img src="/img/fb.svg" /></a>
-          </li>
-        </ul>
+
+        <div class="cards">
+          <div class="card">
+            <img src="/img/fb.svg" />
+            <a href="https://facebook.com/groups/1102916943794365">Mutual support, sharing and healing 🍃</a>
+            <p>
+              Private group for my clients for sharing and mutual support and healing.
+            </p>
+          </div>
+
+          <div class="card">
+          </div>
+        </div>
       </main>
     </div>
 
