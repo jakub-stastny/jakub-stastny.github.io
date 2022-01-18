@@ -17,7 +17,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         // FIXME ShadowRoot in header not matching.
         rewriteLink(a, `index.html${location.search}`)
       } else {
-        rewriteLink(a, `${a.href}.html${location.search}`)
+        //rewriteLink(a, `${a.href}.html${location.search}`)
       }
     } else {
       rewriteLink(a, `${a.href}${location.search}`)
