@@ -4,12 +4,19 @@
     <style>
       header {
         background: linear-gradient(#ffd899, #FFF9ED);
+        padding-top: 50px;
       }
 
-      #logo { width: 100%; }
+      #logo {
+        display: block;
+        width: 100%;
+      }
 
       @media only screen and (min-width: 480px) {
-        #logo { width: 50%; margin: auto; }
+        #logo {
+          width: 50%;
+          margin: auto;
+        }
       }
     </style>
 
