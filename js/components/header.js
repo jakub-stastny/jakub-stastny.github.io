@@ -9,7 +9,7 @@
       #logo { width: 100%; }
 
       @media only screen and (min-width: 480px) {
-        #logo { width: 50%; }
+        #logo { width: 50%; margin: auto; }
       }
     </style>
 
