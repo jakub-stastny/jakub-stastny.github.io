@@ -11,6 +11,11 @@ h1, h2 {
   text-align: center;
 }
 
+a, a:visited {
+  color: royalblue;
+  text-decoration: none;
+}
+
 main {
   margin: 20px;
 }
