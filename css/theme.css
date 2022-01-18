@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #FFF9ED;
+}
+
+h1, h2 {
+  margin-top: 25px;
+  color: #2548AC;
+  text-align: center;
+}
+
+main {
+  margin: 20px;
+}
+
+.leader {
+  margin-right: 17px;
+  margin-down: 17px;
+  border-radius: 12px;
+  float: left;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+/* https://css-tricks.com/couple-takes-sticky-footer */
+.content {
+  min-height: calc(100vh - 135px);
+}
+
+/* Main content, without the header. */
+.content main {}
