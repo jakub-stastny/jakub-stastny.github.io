@@ -36,23 +36,13 @@
 /* Ribbon https://codepen.io/eode9/pen/twkKm */
 
 .corner-ribbon {
-  width: 280px;
   background: #A52921;
-  position: absolute;
-  top: 72px;
-  right: -65px;
-  left: auto;
-  overflow: hidden;
-
   padding: 0 21px;
   text-align: center;
+  font-style: italic;
   line-height: 50px;
   letter-spacing: 1px;
   color: white;
-
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -61,7 +51,15 @@
   text-decoration: none;
 }
 
-@media only screen and (max-device-width: 480px) {
-  /* For now disable on mobile. Too little space for this. */
-  .corner-ribbon { display: none; }
+@media only screen and (min-width: 480px) {
+  .corner-ribbon {
+    width: 280px;
+    position: absolute;
+    top: 72px;
+    right: -65px;
+    left: auto;
+    overflow: hidden;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
 }
