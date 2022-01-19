@@ -31,6 +31,8 @@ main {
 /* https://css-tricks.com/couple-takes-sticky-footer */
 .content {
   min-height: calc(100vh - 135px);
+  max-width: 1024px;
+  margin: auto;
 }
 
 /* Main content, without the header. */
