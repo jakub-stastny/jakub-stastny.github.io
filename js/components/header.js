@@ -1,42 +1,24 @@
 {
   const template = document.createElement('template')
   template.innerHTML = `
-    <style>
-      header {
-        background: linear-gradient(#ffd899, #FFF9ED);
-        padding-top: 50px;
-      }
-
-      #logo {
-        display: block;
-        width: 100%;
-      }
-
-      @media only screen and (min-width: 480px) {
-        #logo {
-          width: 50%;
-          margin: auto;
-        }
-      }
-    </style>
-
-    <header>
-      <a id="link" href="/">
-        <img id="logo" alt="Jakub Šťastný" src="/img/logo.png" />
-      </a>
-    </header>`
+  `
 
   customElements.define('main-header',
     class extends HTMLElement {
       constructor() {
         super()
 
-        this.attachShadow({mode: 'open'})
-          .appendChild(template.content.cloneNode(true))
+        const template = document.createElement('template')
+        const response = fetch("/js/components/templates/header.html", {headers: {'Content-Type': 'text/plain'}})
 
-        if (location.pathname.match(/^\/(index\.html)?$/)) {
-          this.shadowRoot.querySelector('#link').removeAttribute('href')
-        }
+        response.then((r) => r.text().then((t) => {
+          template.innerHTML = t
+          this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true))
+
+          if (location.pathname.match(/^\/(index\.html)?$/)) {
+            this.shadowRoot.querySelector('#link').removeAttribute('href')
+          }
+        }))
       }
     }
   )
