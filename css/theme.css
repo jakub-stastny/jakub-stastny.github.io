@@ -16,6 +16,19 @@ a, a:visited {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+ul li::before {
+  display: inline-block;
+  margin-right: 0.5rem;
+  content: "🍃";
+}
+
+ul li { margin: 7px 0; }
+
 main {
   margin: 20px;
 }
