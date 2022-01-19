@@ -1,0 +1,21 @@
+@import 'theme.css';
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 40%;
+  margin: 15px;
+}
+
+.card img {
+  display: none;
+  margin: auto;
+  height: 50px;
+}
+
+.card p {
+  font-style: italic;
+}
