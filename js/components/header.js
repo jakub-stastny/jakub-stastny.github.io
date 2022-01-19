@@ -1,8 +1,4 @@
 {
-  const template = document.createElement('template')
-  template.innerHTML = `
-  `
-
   customElements.define('main-header',
     class extends HTMLElement {
       constructor() {

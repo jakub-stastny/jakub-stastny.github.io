@@ -1,8 +1,4 @@
 {
-  const template = document.createElement('template')
-  template.innerHTML = `
-  `
-
   customElements.define('main-footer',
     class extends HTMLElement {
       constructor() {
