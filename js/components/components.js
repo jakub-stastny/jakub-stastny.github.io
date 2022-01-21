@@ -1,4 +1,5 @@
 import { rewriteLinks } from "/js/propagate-qs.js"
+import { inDev } from "/js/helpers.js"
 
 function defineComponent(name, callback) {
   customElements.define(name,
@@ -22,10 +23,9 @@ function defineComponent(name, callback) {
   )
 }
 
-function hideInProduction() {
-  return (shadowRoot) => {
-    if (!inDev()) shadowRoot.replaceChildren()
-  }
+function hideInProduction(shadowRoot) {
+  console.log(`Hiding in production: ${!inDev()}`)
+  if (!inDev()) shadowRoot.replaceChildren()
 }
 
 defineComponent('site-header', (shadowRoot) => {
