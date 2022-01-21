@@ -1,25 +1,21 @@
-<!-- <testimonials>
-  <testimonial name="Liliana Herrera">Very insightful....</testimonial>
-  How do you do collections? for testimony in testimonials ....
-</testimonials> -->
-
 <style>
   @import "/css/theme.css";
 
   h1 { margin: 2em 0 0 0; }
-  h3 { margin-bottom: 0.3em; }
 
   .cards {
     display: flex;
     justify-content: center;
   }
-
-  .card {
+  
+  user-testimonial {
     width: 40%;
     margin: 1em;
+    background: yellowgreen;
   }
 </style>
 
+<h1>Testimonials</h1>
 <div class="cards">
-  <h1>Testimonials</h1>
+  <slot></slot>
 </div>

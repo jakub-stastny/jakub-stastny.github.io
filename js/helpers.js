@@ -1,5 +1,5 @@
 function inDev() {
-  return location.host.match(/^\d{3}\.\d+\.\d+\.\d+:\d+$/)
+  return !!location.host.match(/^(\d{3}\.\d+\.\d+\.\d+|localhost):\d+$/)
 }
 
 function parseQS() {
@@ -8,4 +8,14 @@ function parseQS() {
 
 function noTrack() {
   return inDev() || parseQS().notrack
+}
+
+function tag(name, attributes) {
+  const element = document.createElement(name)
+
+  Object.entries(attributes).forEach(([attribute, value]) => {
+    element[attribute] = value
+  })
+
+  return element
 }

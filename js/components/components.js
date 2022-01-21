@@ -13,35 +13,42 @@
             this.attachShadow({mode: 'open'}).
               appendChild(template.content.cloneNode(true))
 
-            if (callback) callback.call(this)
+            if (callback) callback(this.shadowRoot, this)
           }))
         }
       }
     )
   }
+  
+  function hideInProduction() {
+    return (shadowRoot) => {
+      if (!inDev()) shadowRoot.replaceChildren()
+    }
+  }
 
-  defineComponent('site-header', () => {
+  defineComponent('site-header', (shadowRoot) => {
     if (location.pathname.match(/^\/(index\.html)?$/)) {
-      this.shadowRoot.querySelector('#link').removeAttribute('href')
+      shadowRoot.querySelector('#link').removeAttribute('href')
     }
   })
 
-  defineComponent('site-footer', () => {
+  defineComponent('site-footer', (shadowRoot) => {
     function hideElement(element) {
       console.log("Hidding", element)
       element.style.display = 'none'
     }
-  
+
     function isApplePlatform() {
       return navigator.userAgent.match(/iPad|iPhone|iPod|/) || navigator.platform === 'MacIntel'
     }
 
     /* Hide iMessage on non-Apple platforms. */
     if (!isApplePlatform()) {
-      this.shadowRoot.querySelectorAll('.imessage').forEach(element => hideElement(element))
+      shadowRoot.querySelectorAll('.imessage').forEach(element => hideElement(element))
     }
   })
 
   defineComponent('stay-in-touch')
-  defineComponent('user-testimonials')
+  defineComponent('user-testimonials', hideInProduction)
+  defineComponent('user-testimonial')
 }
