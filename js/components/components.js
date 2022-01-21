@@ -49,7 +49,7 @@
   })
 
   defineComponent('stay-in-touch')
-  defineComponent('user-testimonials', hideInProduction)
+  defineComponent('user-testimonials', hideInProduction())
   defineComponent('user-testimonial')
   defineComponent('cta-button')
   defineComponent('corner-ribbon')
