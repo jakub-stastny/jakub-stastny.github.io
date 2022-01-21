@@ -24,6 +24,3 @@ export function rewriteLinks(root) {
     }
   })
 }
-
-/* Register for the main DOM tree. */
-window.addEventListener('DOMContentLoaded', () => rewriteLinks(document))

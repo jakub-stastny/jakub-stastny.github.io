@@ -2,8 +2,8 @@ export function inDev() {
   return !!location.host.match(/^(\d{3}\.\d+\.\d+\.\d+|localhost):\d+$/)
 }
 
-export function parseQS() {
-  return Object.fromEntries(new URLSearchParams(location.search).entries())
+export function parseQS(qs = location.search) {
+  return Object.fromEntries(new URLSearchParams(qs).entries())
 }
 
 export function noTrack() {
