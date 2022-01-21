@@ -6,15 +6,15 @@
 
 import * as helpers from '/js/helpers.js'
 
-function rewriteLink(a, target) {
-  if (a.href !== target) {
-    console.log(`URL ${a.href} -> ${target}`)
-    a.href = target
+function rewriteLink(a, rewrite) {
+  if (a.href !== rewrite) {
+    console.log("URL rewrite", {original: a.href, rewrite})
+    a.href = rewrite
   }
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('a').forEach(a => { // TODO selector match starting with /.
+  document.querySelectorAll('a[href^="/"]').forEach(a => {
     if (a.href === "/" && helpers.inDev()) {
       rewriteLink(a, `/index.html${location.search}`)
     } else if (helpers.inDev()) {
