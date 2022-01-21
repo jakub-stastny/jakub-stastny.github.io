@@ -23,9 +23,11 @@ function defineComponent(name, callback) {
   )
 }
 
-function hideInProduction(shadowRoot) {
-  console.log(`Hiding in production: ${!inDev()}`)
-  if (!inDev()) shadowRoot.replaceChildren()
+function hideInProduction() {
+  return (shadowRoot) => {
+    console.log(`Hiding in production: ${!inDev()}`)
+    if (!inDev()) shadowRoot.replaceChildren()
+  }
 }
 
 defineComponent('site-header', (shadowRoot) => {
