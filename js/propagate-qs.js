@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   document.querySelectorAll('a').forEach(a => { // TODO selector match starting with /.
     if (a.href === "/" && helpers.inDev()) {
       rewriteLink(a, `/index.html${location.search}`)
-    } else if (inDev()) {
+    } else if (helpers.inDev()) {
       rewriteLink(a, `${a.href}.html${location.search}`)
     } else {
       rewriteLink(a, `${a.href}${location.search}`)
