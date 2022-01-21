@@ -45,7 +45,15 @@ main {
   min-height: calc(100vh - 135px);
 }
 
-.content main {
-  max-width: 60em;
-  margin: auto;
+@media only screen and (max-width: 60em) {
+  .content main {
+    margin: 1.7rem;
+  }
+}
+
+@media only screen and (min-width: 60em) {
+  .content main {
+    max-width: 60em;
+    margin: auto;
+  }
 }
