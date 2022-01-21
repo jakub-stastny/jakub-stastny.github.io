@@ -19,7 +19,7 @@
       }
     )
   }
-  
+
   function hideInProduction() {
     return (shadowRoot) => {
       if (!inDev()) shadowRoot.replaceChildren()
@@ -52,4 +52,5 @@
   defineComponent('user-testimonials', hideInProduction)
   defineComponent('user-testimonial')
   defineComponent('cta-button')
+  defineComponent('corner-ribbon')
 }
