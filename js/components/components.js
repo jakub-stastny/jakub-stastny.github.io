@@ -15,6 +15,7 @@ function defineComponent(name, callback) {
             appendChild(template.content.cloneNode(true))
 
           if (callback) callback(this.shadowRoot, this)
+          rewriteLinks(this.shadowRoot)
         }))
       }
     }
@@ -29,8 +30,6 @@ function hideInProduction() {
 
 defineComponent('site-header', (shadowRoot) => {
   // TODO: Move into the template.
-  rewriteLinks(shadowRoot)
-
   if (location.pathname.match(/^\/(index\.html)?$/)) {
     shadowRoot.querySelector('#link').removeAttribute('href')
   }
@@ -61,5 +60,4 @@ defineComponent('contact-card')
 defineComponent('corner-ribbon', (shadowRoot, customElement) => {
   const link = customElement.getAttribute('link')
   shadowRoot.querySelector('a').href = link
-  rewriteLinks(shadowRoot)
 })
