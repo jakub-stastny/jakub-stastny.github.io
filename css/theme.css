@@ -6,7 +6,7 @@ body {
 }
 
 h1, h2 {
-  margin-top: 25px;
+  margin-top: 1.5em;
   color: #2548AC;
   text-align: center;
 }
@@ -18,7 +18,7 @@ a, a:visited {
 
 ul {
   list-style: none;
-  padding-left: 20px;
+  padding-left: 1.3rem;
 }
 
 ul li::before {
@@ -27,24 +27,23 @@ ul li::before {
   content: "🍃";
 }
 
-ul li { margin: 7px 0; }
+ul li { margin: 0.5rem 0; }
 
 main {
-  margin: 20px;
+  margin: 1.3rem;
 }
 
 .leader {
-  margin-right: 17px;
-  margin-down: 17px;
-  border-radius: 12px;
+  margin: 0 0 1em 1em;
+  border-radius: 1em;
   float: left;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0.05em 0.1em;
 }
 
 /* https://css-tricks.com/couple-takes-sticky-footer */
 .content {
   min-height: calc(100vh - 135px);
-  max-width: 1024px;
+  max-width: 60em;
   margin: auto;
 }
 

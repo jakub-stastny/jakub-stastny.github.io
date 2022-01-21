@@ -24,17 +24,3 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
   })
 })
-
-// TODO move into its own file.
-
-/* Hide iMessage on non-Apple platforms. */
-function hideElement(element) {
-  console.log("Hidding", element)
-  element.style.display = 'none'
-}
-
-window.addEventListener('DOMContentLoaded', (event) => {
-  if (!isApplePlatform()) {
-    document.querySelectorAll('.apple-platform').forEach(element => hideElement(element))
-  }
-})

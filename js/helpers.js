@@ -9,7 +9,3 @@ function parseQS() {
 function noTrack() {
   return inDev() || parseQS().notrack
 }
-
-function isApplePlatform() {
-  return navigator.userAgent.match(/iPad|iPhone|iPod|/) || navigator.platform === 'MacIntel'
-}
