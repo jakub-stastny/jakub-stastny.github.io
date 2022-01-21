@@ -27,12 +27,14 @@
   }
 
   defineComponent('site-header', (shadowRoot) => {
+    // TODO: Move into the template.
     if (location.pathname.match(/^\/(index\.html)?$/)) {
       shadowRoot.querySelector('#link').removeAttribute('href')
     }
   })
 
   defineComponent('site-footer', (shadowRoot) => {
+    // TODO: Move into the template.
     function hideElement(element) {
       console.log("Hidding", element)
       element.style.display = 'none'
@@ -53,7 +55,7 @@
   defineComponent('user-testimonial')
   defineComponent('cta-button')
   defineComponent('contact-card')
-  defineComponent('corner-ribbon', (shadowRoot,  customElement) => {
+  defineComponent('corner-ribbon', (shadowRoot, customElement) => {
     const link = customElement.getAttribute('link')
     shadowRoot.querySelector('a').href = link
   })
