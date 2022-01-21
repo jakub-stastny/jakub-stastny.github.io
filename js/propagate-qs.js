@@ -6,10 +6,10 @@
 
 import * as helpers from '/js/helpers.js'
 
-function rewriteLink(a, destination) {
-  if (a.href !== destination) {
-    console.log(`URL ${a.href} -> ${destination}`)
-    a.href = destination
+function rewriteLink(a, target) {
+  if (a.href !== target) {
+    console.log(`URL ${a.href} -> ${target}`)
+    a.href = target
   }
 }
 
