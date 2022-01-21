@@ -13,9 +13,9 @@ function rewriteLink(a, rewrite) {
   }
 }
 
-window.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('a[href^="/"]').forEach(a => {
-    if (a.href === "/" && helpers.inDev()) {
+export function rewriteLinks(root) {
+  root.querySelectorAll('a[href^="/"]').forEach(a => {
+    if (a.href === `${location.origin}/` && helpers.inDev()) {
       rewriteLink(a, `/index.html${location.search}`)
     } else if (helpers.inDev()) {
       rewriteLink(a, `${a.href}.html${location.search}`)
@@ -23,4 +23,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       rewriteLink(a, `${a.href}${location.search}`)
     }
   })
-})
+}
+
+/* Register for the main DOM tree. */
+window.addEventListener('DOMContentLoaded', () => rewriteLinks(document))
