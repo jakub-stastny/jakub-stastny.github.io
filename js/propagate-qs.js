@@ -7,8 +7,10 @@
 import * as helpers from '/js/helpers.js'
 
 function rewriteLink(a, destination) {
-  console.log(`URL ${a.href} -> ${destination}`)
-  a.href = destination
+  if (a.href !== destination) {
+    console.log(`URL ${a.href} -> ${destination}`)
+    a.href = destination
+  }
 }
 
 window.addEventListener('DOMContentLoaded', (event) => {

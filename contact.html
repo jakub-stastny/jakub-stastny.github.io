@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="/css/contact.css" />
     <script type="module" src="/js/components/components.js"></script>
     <script type="module" src="/js/propagate-qs.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3"></script>
-    <script>
+    <script type="module">
+      // Import function (instead of a statement) loads asynchronously.
+      import("https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3")
+
       window.dataLayer = window.dataLayer || []
       function gtag() { if (!noTrack) { dataLayer.push(arguments) }}
       gtag('js', new Date())
