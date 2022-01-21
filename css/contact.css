@@ -1,24 +1,5 @@
 @import 'theme.css';
 
-dl {
-  display: grid;
-  grid-template-columns: 2em max-content;
-}
-
-dt {
-  grid-column-start: 1;
-  margin: 0.2em 0;
-}
-
-dd {
-  grid-column-start: 2;
-  margin: 0;
-}
-
-dd span {
-  font-weight: 550; /* 400 is normal, 600 is bold/strong, but in between doesn't seem to actually create the desirable effect. */
-}
-
 .card:first-child p:first-of-type {
   margin-top: 0;
 }
@@ -46,13 +27,3 @@ dd span {
     margin-left: 1.5em;
   }
 }
-
-.card:last-child {
-  padding: 1em 2.2em 0.8em 1.6em;
-  background: linear-gradient(rgb(136, 205, 50), rgb(136, 205, 150));
-  border-radius: 1.5em;
-  box-shadow: rgba(0, 0, 0, 0.35) 0 0.3em 1em;
-}
-
-.langs { margin: 0; }
-.langs p { font-style: italic; }

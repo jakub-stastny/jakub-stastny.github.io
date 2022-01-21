@@ -52,6 +52,7 @@
   defineComponent('user-testimonials', hideInProduction())
   defineComponent('user-testimonial')
   defineComponent('cta-button')
+  defineComponent('contact-card')
   defineComponent('corner-ribbon', (shadowRoot,  customElement) => {
     const link = customElement.getAttribute('link')
     shadowRoot.querySelector('a').href = link
