@@ -55,7 +55,10 @@ defineComponent('corner-ribbon', (shadowRoot, customElement) => {
 })
 
 defineComponent('cta-button')
-defineComponent('debug-info', hideInProduction)
+defineComponent('debug-info', (shadowRoot) => {
+  hideInProduction(shadowRoot)
+  shadowRoot.getElementById('qs').innerText = JSON.stringify(parseQS())
+})
 
 defineComponent('leader-image', (shadowRoot, customElement) => {
   const link = customElement.getAttribute('src')

@@ -3,25 +3,41 @@
     padding: 0.3em 1.2em;
   }
 
-  @media screen (max-width: 64em) {
-    .screen::after { content: "mobile (less than 64em)"; }
+  dl {
+    display: grid;
+    grid-template-columns: 8em auto;
+  }
+
+  dt {
+    grid-column-start: 1;
+    margin: 0.2em 0;
+    font-weight: bold;
+  }
+
+  dd {
+    grid-column-start: 2;
+    margin: 0;
+    font-family: ui-monospace;
   }
 
   @media screen (min-width: 64em) {
-    .screen::after { content: "small screen (64em-85em)"; }
+    #screen::after { content: "small screen (64em-85em)"; }
   }
   
   @media screen (min-width: 85em) {
-    .screen::after { content: "medium (85em-120em)"; }
+    #screen::after { content: "medium (85em-120em)"; }
   }
   
   @media screen (min-width: 120em) {
-    .screen::after { content: "large (120em-160em)"; }
+    #screen::after { content: "large (120em-160em)"; }
   }
   
   @media screen (min-width: 160em) {
-    .screen::after { content: "extra large (160em+)"; }
+    #screen::after { content: "extra large (160em+)"; }
 </style>
 
-<h4>Debug info</h4>
-<div class="screen"></div>
+<h3>Debug info</h3>
+<dl>
+  <dt>Query string</dt><dd id="qs"></dd>
+  <dt>Screen</dt><dd id="screen">default (less than 64em)</dd>
+</dl>
