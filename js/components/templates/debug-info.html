@@ -20,24 +20,26 @@
     font-family: ui-monospace;
   }
 
-  @media screen (min-width: 64em) {
+  #screen::after { content: "default (less than 64em)"; }
+
+  @media (min-width: 64em) {
     #screen::after { content: "small screen (64em-85em)"; }
   }
-  
-  @media screen (min-width: 85em) {
+
+  @media (min-width: 85em) {
     #screen::after { content: "medium (85em-120em)"; }
   }
-  
-  @media screen (min-width: 120em) {
+
+  @media (min-width: 120em) {
     #screen::after { content: "large (120em-160em)"; }
   }
-  
-  @media screen (min-width: 160em) {
+
+  @media (min-width: 160em) {
     #screen::after { content: "extra large (160em+)"; }
 </style>
 
 <h3>Debug info</h3>
 <dl>
   <dt>Query string</dt><dd id="qs"></dd>
-  <dt>Screen</dt><dd id="screen">default (less than 64em)</dd>
+  <dt>Screen</dt><dd id="screen"></dd>
 </dl>
