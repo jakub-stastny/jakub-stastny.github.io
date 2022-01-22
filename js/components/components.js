@@ -63,4 +63,6 @@ defineComponent('corner-ribbon', (shadowRoot, customElement) => {
   const link = customElement.getAttribute('link')
   shadowRoot.querySelector('a').href = link
 })
+
 defineComponent('copy-healing')
+defineComponent('copy-about-me')
