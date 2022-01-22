@@ -1,0 +1,27 @@
+<style>
+  :host {
+    padding: 0.3em 1.2em;
+  }
+
+  @media screen (max-width: 64em) {
+    .screen::after { content: "mobile (less than 64em)"; }
+  }
+
+  @media screen (min-width: 64em) {
+    .screen::after { content: "small screen (64em-85em)"; }
+  }
+  
+  @media screen (min-width: 85em) {
+    .screen::after { content: "medium (85em-120em)"; }
+  }
+  
+  @media screen (min-width: 120em) {
+    .screen::after { content: "large (120em-160em)"; }
+  }
+  
+  @media screen (min-width: 160em) {
+    .screen::after { content: "extra large (160em+)"; }
+</style>
+
+<h4>Debug info</h4>
+<div class="screen"></div>

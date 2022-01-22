@@ -1,5 +1,5 @@
 import { rewriteLinks } from "/js/propagate-qs.js"
-import { inDev, tag } from "/js/helpers.js"
+import { inDev, parseQS, tag } from "/js/helpers.js"
 
 function defineComponent(name, callback) {
   customElements.define(name,
@@ -34,8 +34,10 @@ function defineComponent(name, callback) {
 }
 
 function hideInProduction(shadowRoot) {
-  console.log(`Hiding in production: ${!inDev()}`)
-  if (!inDev()) shadowRoot.replaceChildren()
+  console.log({debug: parseQS().debug, inDev: inDev()})
+  if (!parseQS().debug && !inDev()) {
+    shadowRoot.replaceChildren()
+  }
 }
 
 /* Components */
@@ -53,6 +55,7 @@ defineComponent('corner-ribbon', (shadowRoot, customElement) => {
 })
 
 defineComponent('cta-button')
+defineComponent('debug-info', hideInProduction)
 
 defineComponent('leader-image', (shadowRoot, customElement) => {
   const link = customElement.getAttribute('src')
