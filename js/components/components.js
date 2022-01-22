@@ -34,7 +34,7 @@ function defineComponent(name, callback) {
 }
 
 function hideInProduction(shadowRoot) {
-  console.log({debug: parseQS().debug, inDev: inDev()})
+  console.log({qs: parseQS(), inDev: inDev()})
   if (!parseQS().debug && !inDev()) {
     shadowRoot.replaceChildren()
   }
