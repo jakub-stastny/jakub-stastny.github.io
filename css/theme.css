@@ -33,13 +33,6 @@ main {
   margin: 1.3rem;
 }
 
-.leader {
-  margin: 0 0.5em 0.5em 0;
-  border-radius: 1em;
-  float: left;
-  box-shadow: rgba(0, 0, 0, 0.16) 0 0.05em 0.1em;
-}
-
 /* https://css-tricks.com/couple-takes-sticky-footer */
 .content {
   min-height: calc(100vh - 135px);

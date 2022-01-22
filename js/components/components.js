@@ -55,6 +55,10 @@ defineComponent('site-footer', (shadowRoot) => {
 })
 
 defineComponent('stay-in-touch')
+defineComponent('leader-image', (shadowRoot, customElement) => {
+  const link = customElement.getAttribute('src')
+  shadowRoot.querySelector('img').src = link
+})
 defineComponent('user-testimonials', hideInProduction())
 defineComponent('user-testimonial')
 defineComponent('cta-button')
