@@ -9,7 +9,6 @@
   flex-direction: row;
   /*align-items: flex-start;*/
   align-items: center;
-  margin-top: 0;
 }
 
 @media only screen and (max-width: 60em) {
