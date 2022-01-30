@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #page {
+        width: 21cm;
+        height: 15cm;
+        padding-bottom: 0.1cm; /* Allow space to cut off the border. */
+        border-bottom: 1px dotted red;
+        /*overflow: hidden;*/
+        color: rgb(60, 10, 153);
+        font-family: "Apple SD Gothic Neo", monospace;
+      }
+
+      #leader {
+        float: right;
+        height: 15cm;
+        margin-left: 1cm;
+      }
+
+      #container {
+        padding: 1cm;
+        text-align: center;
+      }
+
+      #signature {
+        width: 47%;
+        margin: 0.5cm 0 0.3cm 0.6cm;
+        float: left;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      #cta {
+        font-size: 120%;
+        font-weight: bold;
+        color: green;
+      }
+
+      #qr {
+        height: 3.7cm;
+      }
+
+      #langs {
+        font-style: italic;
+        color: grey;
+      }
+      
+      #checklist {
+        font-family: helvetica;
+        padding: 1cm;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="page">
+      <img id="leader" src="healing.jpg" />
+      
+      <img id="signature" src="signature.png" />
+
+      <div id="container">
+
+        <h1>Energy healing session</h1>
+        <p>
+          Would you like to feel more <b>stable</b> and <b>grounded</b> in your life?
+          Better attuned to your <b>intuition</b>?
+        </p>
+
+        <p>
+          Connect to your <b>Higher Self</b> and find your <b>purpose</b> in this lifetime.
+        </p>
+
+        <p id="cta">
+          Reserve a session today!
+        </p>
+
+        <img id="qr" src="qr.jpg" />
+        
+        <p id="langs">
+          Sessions available in 🇬🇧🇪🇸🇨🇿 and 🇵🇱.
+        </p>
+      </div>
+    </div>
+    
+    <div id="checklist">
+      <h1>TODO</h1>
+      <ul>
+        <li>Regenerate QR with an updated <code>version</code> QS argument.</li>
+      </ul>
+    </div>
+  </body>
+</html>
