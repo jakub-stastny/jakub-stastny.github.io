@@ -52,10 +52,20 @@
         font-style: italic;
         color: grey;
       }
-      
-      #checklist {
+
+      #cards {
+        display: flex;
         font-family: helvetica;
         padding: 1cm;
+      }
+
+      #cards > div {
+        padding: 1cm;
+      }
+      
+      #cards h1 {
+        color: darkred;
+        text-align: center;
       }
     </style>
   </head>
@@ -90,11 +100,20 @@
       </div>
     </div>
     
-    <div id="checklist">
-      <h1>TODO</h1>
-      <ul>
-        <li>Regenerate QR with an updated <code>version</code> QS argument.</li>
-      </ul>
+    <div id="cards">
+      <div id="links">
+        <h1>Links</h1>
+        <ul>
+          <li><a href="http://iosfonts.com">iOS fonts</a></li>
+        </ul>
+      </div>
+
+      <div id="checklist">
+        <h1>TODO</h1>
+        <ul>
+          <li>Regenerate QR with an updated <code>version</code> QS argument.</li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
