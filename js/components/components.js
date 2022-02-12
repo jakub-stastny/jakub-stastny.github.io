@@ -6,16 +6,8 @@ function convertToJSCase(string) {
   return string.replace(/-([a-z])/g, (_, a) => a.toUpperCase())
 }
 
-function convertToVarCase(string) {
-  return string.replace(/[A-Z]/g, '-$&').toLowerCase()
-}
-
-const expr = Object.keys(context).map(keyword => convertToVarCase(keyword)).join('|')
-const pattern = new RegExp(expr)
-
-// TODO: change the regexp to explicitly match context keywords.
 function renderTemplate(string, context) {
-  return string.replace(/\{([a-zA-Z-]+)\}/g, (_, keyword) => context[convertToJSCase(keyword)])
+  return string.replace(/\{([a-zA-Z-]+)\}/g, (_, keyword) => (convertToJSCase(keyword) in context) ? context[convertToJSCase(keyword)] : console.error(`Unknown context var: ${keyword}`))
 }
 
 function defineComponent(name, callback) {
@@ -30,12 +22,12 @@ function defineComponent(name, callback) {
             appendChild(template.content.cloneNode(true))
 
           this.shadowRoot.querySelectorAll('script').forEach(script => {
-            console.log(script)
+            console.log(`Script ${name}`)
             const clone = tag('script', {type: 'module', text: script.text})
             this.shadowRoot.appendChild(clone)
           })
 
-          this.callback(this) // Deprecated in favour of scripts in templates.
+          this.callback(this)
         }))
       }
 
@@ -67,12 +59,12 @@ function hideInProduction(shadowRoot) {
 defineComponent('contact-card')
 defineComponent('copy-about-me')
 
-defineComponent('copy-healing', (shadowRoot, customElement) => {
+defineComponent('copy-healing', (shadowRoot, customElement) => { // TODO: move to the template.
   const link = customElement.getAttribute('leader')
   shadowRoot.querySelector('leader-image').setAttribute('src', link)
 })
 
-defineComponent('corner-ribbon', (shadowRoot, customElement) => {
+defineComponent('corner-ribbon', (shadowRoot, customElement) => { // TODO: move to the template.
   const link = customElement.getAttribute('link')
   shadowRoot.querySelector('a').setAttribute('href', link)
 })
@@ -80,11 +72,11 @@ defineComponent('corner-ribbon', (shadowRoot, customElement) => {
 defineComponent('cta-button')
 defineComponent('debug-info', (shadowRoot) => {
   hideInProduction(shadowRoot)
-  shadowRoot.getElementById('qs').innerText = JSON.stringify(parseQS())
+  shadowRoot.getElementById('qs').innerText = JSON.stringify(parseQS()) // TODO: move to the template.
   shadowRoot.getElementById('context').innerText = JSON.stringify(context)
 })
 
-defineComponent('leader-image', (shadowRoot, customElement) => {
+defineComponent('leader-image', (shadowRoot, customElement) => { // TODO: move to the template.
   const link = customElement.getAttribute('src')
   shadowRoot.querySelector('img').setAttribute('src', link)
 })

@@ -8,7 +8,7 @@ import * as helpers from '/js/helpers.js'
 
 function rewriteLink(a, rewrite) {
   if (a.href !== rewrite) {
-    console.log("URL rewrite", {original: a.href, rewrite})
+    console.log(`URL rewrite ${a.href} -> ${rewrite}`)
     a.href = rewrite
   }
 }
