@@ -18,8 +18,25 @@
     border-radius: 1em;
     box-shadow: rgba(0, 0, 0, 0.35) 0 0.3em 1em;
   }
+
+  .price {
+    display: none; /* Safe default. */
+  }
 </style>
 
+<script>
+  import context from '/js/context.js'
+  import { parseQS } from '/js/helpers.js'
+
+  const qs = parseQS()
+
+  if (qs.country && context[qs.country]) {
+    document.querySelectorAll('.price').forEach(element => element.style.display = 'inline')
+  }
+</script>
+
 <div class="cta-row">
-  <a class="cta-button" href="/contact">Book a session now</a>
+  <a class="cta-button" href="/contact">
+    Book a session now <span class="price">{local-price}</span>
+  </a>
 </div>

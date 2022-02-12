@@ -1,5 +1,22 @@
 import { rewriteLinks } from "/js/propagate-qs.js"
 import { inDev, parseQS, tag } from "/js/helpers.js"
+import context from "/js/context.js"
+
+function convertToJSCase(string) {
+  return string.replace(/-([a-z])/g, (_, a) => a.toUpperCase())
+}
+
+function convertToVarCase(string) {
+  return string.replace(/[A-Z]/g, '-$&').toLowerCase()
+}
+
+const expr = Object.keys(context).map(keyword => convertToVarCase(keyword)).join('|')
+const pattern = new RegExp(expr)
+
+// TODO: change the regexp to explicitly match context keywords.
+function renderTemplate(string, context) {
+  return string.replace(/\{([a-zA-Z-]+)\}/g, (_, keyword) => context[convertToJSCase(keyword)])
+}
 
 function defineComponent(name, callback) {
   customElements.define(name,
@@ -8,11 +25,17 @@ function defineComponent(name, callback) {
         super()
 
         this.fetchTemplate().then((res) => res.text().then((text) => {
-          const template = tag('template', {innerHTML: text})
+          const template = tag('template', {innerHTML: renderTemplate(text, context)})
           this.attachShadow({mode: 'open'}).
             appendChild(template.content.cloneNode(true))
 
-          this.callback(this)
+          this.shadowRoot.querySelectorAll('script').forEach(script => {
+            console.log(script)
+            const clone = tag('script', {type: 'module', text: script.text})
+            this.shadowRoot.appendChild(clone)
+          })
+
+          this.callback(this) // Deprecated in favour of scripts in templates.
         }))
       }
 
@@ -58,6 +81,7 @@ defineComponent('cta-button')
 defineComponent('debug-info', (shadowRoot) => {
   hideInProduction(shadowRoot)
   shadowRoot.getElementById('qs').innerText = JSON.stringify(parseQS())
+  shadowRoot.getElementById('context').innerText = JSON.stringify(context)
 })
 
 defineComponent('leader-image', (shadowRoot, customElement) => {

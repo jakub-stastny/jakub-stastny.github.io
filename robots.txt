@@ -5,3 +5,6 @@ Disallow: /after-your-guidance-session.html
 
 Disallow: /after-your-healing-session
 Disallow: /after-your-healing-session.html
+
+Disallow: /request-for-testimonials
+Disallow: /request-for-testimonials.html
