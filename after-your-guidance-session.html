@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/theme.css" />
 
-    <script type="module" src="/js/components/components.js"></script>
+    <script type="module" src="/js/components.js"></script>
     <script type="module">
       import { noTrack } from "/js/helpers.js"
       import { rewriteLinks } from "/js/propagate-qs.js"
@@ -40,13 +40,12 @@
 
         <ul>
           <li>If you end up emotionally destabilised, which might happen after touching deep issues that hasn't been attented for a long time, don't hesitate to contact me. Remember that I'm here for you.</li>
-          <li><b>Repeated sessions</b> are strongly recommended as any real change require commitment and sustained effort. They are also cheaper!</li>
-          <li>I'm always <a style="font-weight: bold" target="_blank" href="https://docs.google.com/forms/d/1wA6c_2AdcuRVXRGFmr4fGWJhhVFo3nUgoNrd7Yj2hAA/edit?usp=sharing">looking for feedback</a>! That is, I'm interested in honest feedback in order to know what could I improve. Pat on the shoulder feels nice, but that's not the point here.</li>
-          <li>If you do feel like patting me on the shoulder however, please <a style="font-weight: bold" target="_blank" href="/request-for-testimonials">write me a testimonial</a>.</li>
+          <li><repeated-sessions></repeated-sessions></li>
+          <li><feedback-form></feedback-form></li>
+          <li><write-testimonial></write-testimonial></li>
         </ul>
 
-        <p style="font-size: 1.7em; font-style: italic; text-align: center">Thank you 🙏🏼</p>
-
+        <thank-you></thank-you>
         <stay-in-touch></stay-in-touch>
       </main>
     </div>
