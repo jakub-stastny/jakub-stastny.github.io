@@ -37,7 +37,7 @@ function defineComponent(name, callback) {
       }
 
       fetchTemplate() {
-        return fetch(`/js/components/templates/${name}.html`, {headers: {'Content-Type': 'text/plain'}})
+        return fetch(`/js/templates/${name}.html`, {headers: {'Content-Type': 'text/plain'}})
       }
 
       attributeChangedCallback() {
