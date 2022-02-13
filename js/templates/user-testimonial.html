@@ -6,6 +6,11 @@
     text-align: center;
   }
 
+  slot[name=profession] {
+    color: darkslategrey;
+    font-style: italic;
+  }
+
   img {
     width: 7em;
     border-radius: 3.5em;
@@ -16,7 +21,7 @@
 
   .quote {
     font-style: italic;
-    color: darkslategrey;
+    color: slategrey;
   }
 </style>
 
@@ -26,7 +31,12 @@
 </script>
 
 <div class="card">
-  <h3><slot name="name"></slot></h3>
+  <h3>
+    <slot name="name"></slot>
+    <slot name="profession"></slot>
+  </h3>
+
   <img />
+
   <slot class="quote"></slot>
 </div>
