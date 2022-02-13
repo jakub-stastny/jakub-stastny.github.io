@@ -1,5 +1,7 @@
-export function _init(shadowRoot, templateName, scriptName) {
+export function _init(customElement, templateName, scriptName) {
   console.log(`Executing script %c${templateName}%c::%c${scriptName}%c.`, 'color:#87CEEB', 'color:#fff', 'color:#FFD700', 'color:#fff')
+
+  const shadowRoot = customElement.shadowRoot
 
   function $(selector) {
     const element = shadowRoot.querySelector(selector)
@@ -8,6 +10,6 @@ export function _init(shadowRoot, templateName, scriptName) {
   }
 
   const $$ = shadowRoot.querySelectorAll.bind(shadowRoot)
-  
+
   return {$, $$}
 }

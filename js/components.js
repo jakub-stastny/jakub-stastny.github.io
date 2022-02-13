@@ -15,8 +15,10 @@ function generateTagClone(varName, templateName, script) {
   const lines = [
     "import { _init } from '/js/component-helpers.js'",
     `const customExports = _init(${varName}, '${templateName}', '${script.getAttribute('name')}')`,
-    "Object.entries(customExports).map(([ fnName, fn ]) => window[fnName] = fn)",
-    script.text.replace(/shadowRoot/g, varName)]
+    "Object.entries(customExports).map(([ fnName, fn ]) => window[fnName] = fn)", // I think this will rewrite the one on window, we need local scope, maybe using eval.
+    script.text.
+      replace(/customElement/g, varName).
+      replace(/shadowRoot/g, `${varName}.shadowRoot`)]
 
   return tag('script', {type: 'module', text: lines.join("\n")})
 }
@@ -34,7 +36,7 @@ function defineComponent(name, callback) {
 
           this.shadowRoot.querySelectorAll('script').forEach(script => {
             const varName = `sr${Math.floor(Math.random() * 100000)}`
-            window[varName] = this.shadowRoot
+            window[varName] = this
             this.shadowRoot.appendChild(generateTagClone(varName, name, script))
           })
 
@@ -74,6 +76,7 @@ defineComponent('contact-card')
 defineComponent('copy-about-me')
 
 defineComponent('copy-healing', (shadowRoot, customElement) => { // TODO: move to the template.
+  window.e = customElement
   const link = customElement.getAttribute('leader')
   shadowRoot.querySelector('leader-image').setAttribute('src', link)
 })
