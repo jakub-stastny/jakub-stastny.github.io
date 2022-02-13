@@ -6,12 +6,13 @@
   .cards {
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
-  
-  user-testimonial {
-    width: 40%;
-    margin: 1em;
-    background: yellowgreen;
+
+  @media only screen and (min-width: 64em) {
+    .cards {
+      flex-direction: row;
+    }
   }
 </style>
 
