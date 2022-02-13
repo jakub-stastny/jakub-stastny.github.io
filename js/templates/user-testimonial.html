@@ -12,8 +12,10 @@
   }
 
   img {
-    width: 7em;
-    border-radius: 3.5em;
+    --img-width: 7em;
+    width: var(--img-width);
+    height: var(--img-width);
+    border-radius: calc(var(--img-width) / 2);
     margin-right: 1em;
     box-shadow: rgba(0, 0, 0, 0.16) 0 0.05em 0.1em;
     float: left;

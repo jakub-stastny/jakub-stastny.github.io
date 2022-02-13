@@ -46,13 +46,11 @@ function defineComponent(name, callback) {
         }))
       }
 
-      callback(customElement) {
+      callback() {
         if (callback) {
-          console.log(`Running callback for %c${name}%c.`, 'color:#87CEEB', 'color:#fff')
-          callback(customElement.shadowRoot, customElement)
+          const result = callback()
+          console.log(`Rendering %c${name}%c: %c${result}%c.`, 'color:#87CEEB', 'color:#fff')
         }
-
-        // rewriteLinks(customElement.shadowRoot)
       }
 
       fetchTemplate() {
@@ -67,10 +65,8 @@ function defineComponent(name, callback) {
   )
 }
 
-function hideInProduction(shadowRoot) {
-  if (!parseQS().debug && !inDev()) {
-    shadowRoot.replaceChildren()
-  }
+function dontRenderInProduction() {
+  return (!parseQS().debug && !inDev())
 }
 
 /* Components */
@@ -79,7 +75,7 @@ defineComponent('copy-about-me')
 defineComponent('copy-healing')
 defineComponent('corner-ribbon')
 defineComponent('cta-button')
-defineComponent('debug-info', hideInProduction)
+defineComponent('debug-info', dontRenderInProduction)
 defineComponent('feedback-form')
 defineComponent('leader-image')
 defineComponent('repeated-sessions')
@@ -88,5 +84,5 @@ defineComponent('site-header')
 defineComponent('stay-in-touch')
 defineComponent('thank-you')
 defineComponent('user-testimonial')
-defineComponent('user-testimonials', hideInProduction)
+defineComponent('user-testimonials')
 defineComponent('write-testimonial')
