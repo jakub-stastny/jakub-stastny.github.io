@@ -10,6 +10,17 @@ function renderTemplate(string, context) {
   return string.replace(/\{([a-zA-Z-]+)\}/g, (_, keyword) => (convertToJSCase(keyword) in context) ? context[convertToJSCase(keyword)] : console.error(`Unknown context var: ${keyword}`))
 }
 
+// Module scripts are executed asynchronously.
+function generateTagClone(varName, templateName, script) {
+  const lines = [
+    "import { _init } from '/js/component-helpers.js'",
+    `const customExports = _init(${varName}, '${templateName}', '${script.getAttribute('name')}')`,
+    "Object.entries(customExports).map(([ fnName, fn ]) => window[fnName] = fn)",
+    script.text.replace(/shadowRoot/g, varName)]
+
+  return tag('script', {type: 'module', text: lines.join("\n")})
+}
+
 function defineComponent(name, callback) {
   customElements.define(name,
     class extends HTMLElement {
@@ -23,17 +34,8 @@ function defineComponent(name, callback) {
 
           this.shadowRoot.querySelectorAll('script').forEach(script => {
             const varName = `sr${Math.floor(Math.random() * 100000)}`
-            window[varName] = this.shadowRoot // Modules scripts are executed asynchronously.
-            const clone = tag('script', {
-              type: 'module',
-              text: [
-                `console.log("Executing script %c${name}%c::%c${script.getAttribute('name')}%c.", 'color:#87CEEB', 'color:#fff', 'color:#FFD700', 'color:#fff')`,
-                `const $ = ${varName}.querySelector.bind(${varName})`,
-                `const $$ = ${varName}.querySelectorAll.bind(${varName})`,
-                script.text.replace(/shadowRoot/g, varName)
-              ].join("\n")})
-
-            this.shadowRoot.appendChild(clone)
+            window[varName] = this.shadowRoot
+            this.shadowRoot.appendChild(generateTagClone(varName, name, script))
           })
 
           this.callback(this)
