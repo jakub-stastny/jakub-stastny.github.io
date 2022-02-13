@@ -8,7 +8,7 @@ import * as helpers from '/js/helpers.js'
 
 function rewriteLink(a, rewrite) {
   if (a.href !== rewrite) {
-    console.log(`URL rewrite ${a.href} -> ${rewrite}`)
+    console.log(`URL rewrite %c${a.href.replace(location.origin, '')}%c -> %c${rewrite.replace(location.origin, '')}`, 'color:#6B8E23', 'color:#fff', 'color:#6B8E23')
     a.href = rewrite
   }
 }

@@ -22,7 +22,7 @@ function defineComponent(name, callback) {
             appendChild(template.content.cloneNode(true))
 
           this.shadowRoot.querySelectorAll('script').forEach(script => {
-            console.log(`Script ${name}`)
+            console.log(`Executing script %c${name}%c::%c${script.getAttribute('name')}%c.`, 'color:#87CEEB', 'color:#fff', 'color:#FFD700', 'color:#fff')
             const clone = tag('script', {type: 'module', text: script.text})
             this.shadowRoot.appendChild(clone)
           })
@@ -32,7 +32,11 @@ function defineComponent(name, callback) {
       }
 
       callback(customElement) {
-        if (callback) callback(customElement.shadowRoot, customElement)
+        if (callback) {
+          console.log(`Running callback for %c${name}%c.`, 'color:#87CEEB', 'color:#fff')
+          callback(customElement.shadowRoot, customElement)
+        }
+
         rewriteLinks(customElement.shadowRoot)
       }
 
@@ -49,7 +53,6 @@ function defineComponent(name, callback) {
 }
 
 function hideInProduction(shadowRoot) {
-  console.log({qs: parseQS(), inDev: inDev()})
   if (!parseQS().debug && !inDev()) {
     shadowRoot.replaceChildren()
   }
@@ -70,11 +73,7 @@ defineComponent('corner-ribbon', (shadowRoot, customElement) => { // TODO: move 
 })
 
 defineComponent('cta-button')
-defineComponent('debug-info', (shadowRoot) => {
-  hideInProduction(shadowRoot)
-  shadowRoot.getElementById('qs').innerText = JSON.stringify(parseQS()) // TODO: move to the template.
-  shadowRoot.getElementById('context').innerText = JSON.stringify(context)
-})
+defineComponent('debug-info', hideInProduction)
 
 defineComponent('leader-image', (shadowRoot, customElement) => { // TODO: move to the template.
   const link = customElement.getAttribute('src')

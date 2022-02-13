@@ -38,6 +38,16 @@
     #screen::after { content: "extra large (160em+)"; }
 </style>
 
+<script name="fill-in-debug-properties">
+  import { parseQS } from '/js/helpers.js'
+  import context from '/js/context.js'
+
+  console.log({qs: parseQS(), this, context, document})
+
+  document.getElementById('qs').innerText = JSON.stringify(parseQS())
+  document.getElementById('context').innerText = JSON.stringify(context)
+</script>
+
 <h3>Debug info</h3>
 <dl>
   <dt>Query string</dt><dd id="qs"></dd>
