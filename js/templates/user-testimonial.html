@@ -1,10 +1,32 @@
 <style>
   @import "/css/theme.css";
 
-  h3 { margin-bottom: 0.3em; }
+  h3 {
+    margin-bottom: 0.3em;
+    text-align: center;
+  }
+
+  img {
+    width: 7em;
+    border-radius: 3.5em;
+    margin-right: 1em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 0.05em 0.1em;
+    float: left;
+  }
+
+  .quote {
+    font-style: italic;
+    color: darkslategrey;
+  }
 </style>
+
+<script name="set-profile-image">
+  const link = customElement.getAttribute('image')
+  $('img').setAttribute('src', link)
+</script>
 
 <div class="card">
   <h3><slot name="name"></slot></h3>
-  <slot></slot>
+  <img />
+  <slot class="quote"></slot>
 </div>
