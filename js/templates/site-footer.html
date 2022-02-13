@@ -23,6 +23,22 @@
   li.email img { height: 2.3em; }
 </style>
 
+<script name="hide-imessage-non-apple">
+  function hideElement(element) {
+    console.log("Hidding", element)
+    element.style.display = 'none'
+  }
+
+  function isApplePlatform() {
+    return navigator.userAgent.match(/iPad|iPhone|iPod|/) || navigator.platform === 'MacIntel'
+  }
+
+  /* Hide iMessage on non-Apple platforms. */
+  if (!isApplePlatform()) {
+    $$('.imessage').forEach(element => hideElement(element))
+  }
+</script>
+
 <footer>
   <ul>
     <li class="whatsapp">

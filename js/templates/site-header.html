@@ -17,6 +17,12 @@
   }
 </style>
 
+<script name="make-static-on-root">
+  if (location.pathname.match(/^\/(index\.html)?$/)) {
+    $('#link').removeAttribute('href')
+  }
+</script>
+
 <header>
   <a id="link" href="/">
     <img id="logo" alt="Jakub Šťastný" src="/img/logo.png" />

@@ -32,6 +32,11 @@
   }
 </style>
 
+<script name="set-link">
+  const link = customElement.getAttribute('link')
+  $('a').setAttribute('href', link)
+</script>
+
 <div class="corner-ribbon">
   <a href="#">
     <slot></slot>
