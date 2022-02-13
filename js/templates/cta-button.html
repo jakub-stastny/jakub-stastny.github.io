@@ -19,7 +19,7 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0 0.3em 1em;
   }
 
-  .price {
+  #price {
     display: none; /* Safe default. */
     color: #DB7093;
   }
@@ -30,14 +30,12 @@
 
   if (context.localPrice) {
     console.log(`Local price is %c${context.localPrice}%c.`, 'color:#C71585', 'color:#fff')
-    const items = $$('.price')
-    if (items.length === 0) console.error("Items empty.")
-    items.forEach(element => element.style.display = 'inline')
+    $('#price').style.display = 'inline'
   }
 </script>
 
 <div class="cta-row">
   <a class="cta-button" href="/contact">
-    Book a session now <span class="price">{local-price}</span>
+    Book a session now <span id="price">{local-price}</span>
   </a>
 </div>
