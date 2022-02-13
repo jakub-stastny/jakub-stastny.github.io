@@ -22,8 +22,13 @@ function defineComponent(name, callback) {
             appendChild(template.content.cloneNode(true))
 
           this.shadowRoot.querySelectorAll('script').forEach(script => {
-            console.log(`Executing script %c${name}%c::%c${script.getAttribute('name')}%c.`, 'color:#87CEEB', 'color:#fff', 'color:#FFD700', 'color:#fff')
-            const clone = tag('script', {type: 'module', text: script.text})
+            const varName = `sr${Math.floor(Math.random() * 100000)}`
+            window[varName] = this.shadowRoot // Modules scripts are executed asynchronously.
+            const clone = tag('script', {type: 'module', text: [
+              `console.log("Executing script %c${name}%c::%c${script.getAttribute('name')}%c.", 'color:#87CEEB', 'color:#fff', 'color:#FFD700', 'color:#fff')`,
+              script.text.replace('shadowRoot', varName)
+            ].join("\n")})
+
             this.shadowRoot.appendChild(clone)
           })
 

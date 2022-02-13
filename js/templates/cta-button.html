@@ -21,17 +21,18 @@
 
   .price {
     display: none; /* Safe default. */
+    color: #DB7093;
   }
 </style>
 
 <script name="hide-price-if-unavailable">
   import context from '/js/context.js'
-  import { parseQS } from '/js/helpers.js'
 
-  const qs = parseQS()
-
-  if (qs.country && context[qs.country]) {
-    document.querySelectorAll('.price').forEach(element => element.style.display = 'inline')
+  if (context.localPrice) {
+    console.log(`Local price is %c${context.localPrice}%c.`, 'color:#C71585', 'color:#fff')
+    const items = shadowRoot.querySelectorAll('.price')
+    if (items.length === 0) console.error("Items empty.")
+    items.forEach(element => element.style.display = 'inline')
   }
 </script>
 
