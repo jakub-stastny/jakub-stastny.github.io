@@ -26,7 +26,7 @@ function defineComponent(name, callback) {
             window[varName] = this.shadowRoot // Modules scripts are executed asynchronously.
             const clone = tag('script', {type: 'module', text: [
               `console.log("Executing script %c${name}%c::%c${script.getAttribute('name')}%c.", 'color:#87CEEB', 'color:#fff', 'color:#FFD700', 'color:#fff')`,
-              script.text.replace('shadowRoot', varName)
+              script.text.replace(/shadowRoot/g, varName)
             ].join("\n")})
 
             this.shadowRoot.appendChild(clone)
