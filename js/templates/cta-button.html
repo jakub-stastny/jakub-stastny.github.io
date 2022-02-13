@@ -30,7 +30,7 @@
 
   if (context.localPrice) {
     console.log(`Local price is %c${context.localPrice}%c.`, 'color:#C71585', 'color:#fff')
-    const items = shadowRoot.querySelectorAll('.price')
+    const items = $$('.price')
     if (items.length === 0) console.error("Items empty.")
     items.forEach(element => element.style.display = 'inline')
   }

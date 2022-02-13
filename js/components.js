@@ -24,10 +24,14 @@ function defineComponent(name, callback) {
           this.shadowRoot.querySelectorAll('script').forEach(script => {
             const varName = `sr${Math.floor(Math.random() * 100000)}`
             window[varName] = this.shadowRoot // Modules scripts are executed asynchronously.
-            const clone = tag('script', {type: 'module', text: [
-              `console.log("Executing script %c${name}%c::%c${script.getAttribute('name')}%c.", 'color:#87CEEB', 'color:#fff', 'color:#FFD700', 'color:#fff')`,
-              script.text.replace(/shadowRoot/g, varName)
-            ].join("\n")})
+            const clone = tag('script', {
+              type: 'module',
+              text: [
+                `console.log("Executing script %c${name}%c::%c${script.getAttribute('name')}%c.", 'color:#87CEEB', 'color:#fff', 'color:#FFD700', 'color:#fff')`,
+                `const $ = ${varName}.querySelector.bind(${varName})`,
+                `const $$ = ${varName}.querySelectorAll.bind(${varName})`,
+                script.text.replace(/shadowRoot/g, varName)
+              ].join("\n")})
 
             this.shadowRoot.appendChild(clone)
           })

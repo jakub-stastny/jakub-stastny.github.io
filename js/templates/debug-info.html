@@ -42,8 +42,8 @@
   import { parseQS } from '/js/helpers.js'
   import context from '/js/context.js'
 
-  shadowRoot.getElementById('qs').innerText = JSON.stringify(parseQS())
-  shadowRoot.getElementById('context').innerText = JSON.stringify(context)
+  $('#qs').innerText = JSON.stringify(parseQS())
+  $('#context').innerText = JSON.stringify(context)
 </script>
 
 <h3>Debug info</h3>
