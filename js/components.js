@@ -25,11 +25,13 @@ function generateTagClone(varName, templateName, script) {
   return tag('script', {type: 'module', text: lines.join("\n")})
 }
 
-function defineComponent(name, callback) {
+function defineComponent(name, shouldRenderFn) {
   customElements.define(name,
     class extends HTMLElement {
       constructor() {
         super()
+
+        if (shouldRenderFn && !shouldRenderFn()) return
 
         this.fetchTemplate().then((res) => res.text().then((text) => {
           const template = tag('template', {innerHTML: renderTemplate(text, context)})
@@ -65,7 +67,7 @@ function defineComponent(name, callback) {
   )
 }
 
-function dontRenderInProduction() {
+function renderInProduction() {
   return (!parseQS().debug && !inDev())
 }
 
@@ -75,7 +77,7 @@ defineComponent('copy-about-me')
 defineComponent('copy-healing')
 defineComponent('corner-ribbon')
 defineComponent('cta-button')
-defineComponent('debug-info', dontRenderInProduction)
+defineComponent('debug-info', renderInProduction)
 defineComponent('feedback-form')
 defineComponent('leader-image')
 defineComponent('repeated-sessions')
