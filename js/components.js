@@ -31,6 +31,7 @@ function defineComponent(name, shouldRenderFn) {
       constructor() {
         super()
 
+        console.log(`${name}: ${shouldRenderFn && !shouldRenderFn()}`)
         if (shouldRenderFn && !shouldRenderFn()) return
 
         this.fetchTemplate().then((res) => res.text().then((text) => {
@@ -43,8 +44,6 @@ function defineComponent(name, shouldRenderFn) {
             window[varName] = this
             this.shadowRoot.appendChild(generateTagClone(varName, name, script))
           })
-
-          this.callback(this)
         }))
       }
 

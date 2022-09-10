@@ -8,3 +8,7 @@
 - `version` flier version, in order to be able to A/B test.
 - `lang` language version.
 - `notrack`
+
+# Notes
+
+Tanatology practicioner: death doula

@@ -8,11 +8,15 @@
 
     <script type="module" src="/js/components.js"></script>
     <script type="module">
-      import { noTrack } from "/js/helpers.js"
+      import { noTrack, parseQS } from "/js/helpers.js"
       import { rewriteLinks } from "/js/propagate-qs.js"
 
       // Import function (instead of a statement) loads asynchronously.
-      import("https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3")
+      import("https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3").then(() => {
+        const country = parseQS().country?.toUpperCase() || '(int)'
+        console.log(country, ga)
+        ga('set', 'title', `Spiritual guidance ${country}`)
+      })
 
       window.dataLayer = window.dataLayer || []
       function gtag() { if (!noTrack()) { dataLayer.push(arguments) }}
@@ -71,7 +75,7 @@
             <span slot="name">Majo 🇬🇹</span>
             <span slot="profession">hospitality &amp; administration</span>
             <p>
-              Initially I was sceptical, but after I got to know Jakub, I decided to give it a go. He explained to me I need to connect more with nature (note: and life itself, to compensate underdevelopped 1<sup>st</sup> and 3<sup>rd</sup> chakra) and not to only live in my head, amongst other things. His words really resonated with me and as I started to live by them, I started to feel better in my body, with less headaches and I felt my spine released a lot of tension, making me feel more relaxed. I highly recommend Jakub's therapy, both the therapy itself which was very powerful and quite frankly made me astonished as I wasn't aware previously how strong energy really is, as well as listening to his words, his message might be simple, but it's very powerful and effecient nonetheless.
+              Initially I was sceptical, but after I got to know Jakub, I decided to give it a go. He explained to me I need to connect more with nature (note: and life itself, to compensate underdevelopped 1<sup>st</sup> and 3<sup>rd</sup> chakra) and not to only live in my head, amongst other things. His words really resonated with me and as I started to live by them, I started to feel better in my body, with less headaches and I felt my spine released a lot of tension, making me feel more relaxed. I highly recommend Jakub's therapy, both the therapy itself which was very powerful and quite frankly made me astonished as I wasn't aware previously how strong energy really is, as well as listening to his words, his message might be simple, but it's very powerful and efficient nonetheless.
             </p>
           </user-testimonial>
 
