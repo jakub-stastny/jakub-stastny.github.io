@@ -1,0 +1,101 @@
+<!-- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web app layout test</title>
+    <style>
+      html {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        display: grid;
+        min-height: 100%;
+
+        grid-template-areas: "header"
+                             "links"
+                             "content"
+                             "footer";
+        grid-template-rows: auto 35px 1fr auto;
+        grid-template-columns: 100%;
+      }
+
+      /* Desktop */
+      @media (min-width: 700px) {
+        body {
+          grid-template-areas: "header  header  header"
+                               "links   content content"
+                               "footer  footer  footer";
+          grid-template-rows: auto 1fr auto;
+          grid-template-columns: 170px 1fr 1fr;
+        }
+      }
+
+      header {
+        min-height: 70px;
+        background: skyblue;
+        grid-area: header;
+
+        display: flex;
+        justify-content: center;
+      }
+
+      nav {
+        background: #FFF9ED;
+        grid-area: links;
+        padding: 7px;
+      }
+
+      nav ul {
+        list-style-type: none;
+      }
+
+      main {
+        background: #FFF9ED;
+        grid-area: content;
+        padding: 7px;
+      }
+
+      footer {
+        padding: 0;
+        min-height: 50px;
+        background: linear-gradient(#FFF9ED, #ffd899);
+        grid-area: footer;
+
+        display: flex;
+        justify-content: center;
+      }
+
+      footer > div {
+        padding-top: 20px;
+        padding-bottom: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      Logo &amp; page title.
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="/about">About me</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      This is the main content.
+    </main>
+
+    <footer>
+      <div>
+        &copy; Jakub Šťastný.
+      </div>
+    <footer>
+  </body>
+</html>
