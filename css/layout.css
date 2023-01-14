@@ -17,7 +17,7 @@ body {
 }
 
 /* Desktop */
-@media (min-width: 700px) {
+@media (min-width: 1000px) {
   body {
     grid-template-areas: "header  header  header"
                          "links   content content"
@@ -32,7 +32,7 @@ body {
 }
 
 /* Mobile. */
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   nav {
     background: #333333 !important;
     display: flex;
