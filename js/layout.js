@@ -37,13 +37,11 @@ $$("nav a").forEach((a) => {
     history.pushState({}, "", a.href)
     fetch(a.href).then((response) => {
       response.text().then((text) => {
-        const fetchedDocument = document.createElement("html")
-        fetchedDocument.innerHTML = text
+        const parser = new DOMParser()
+        const fetchedDocument = parser.parseFromString(text, "text/html")
         const body = fetchedDocument.querySelector("body main")
         $("body main").replaceWith(body)
-        console.log(document.title)
-        document.title = fetchedDocument.querySelector("title")
-        console.log(document.title) /* FIXME */
+        document.title = fetchedDocument.title
 
         // Rerun initialiser functions.
         makeCurrentRouteNotClickable()
