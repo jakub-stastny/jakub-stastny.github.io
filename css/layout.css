@@ -9,10 +9,10 @@ body {
   min-height: 100%;
 
   grid-template-areas: "header"
-                        "links"
-                        "content"
-                        "footer";
-  grid-template-rows: auto 35px 1fr auto;
+                       "links"
+                       "content"
+                       "footer";
+  grid-template-rows: auto auto 1fr auto;
   grid-template-columns: 100%;
 }
 
@@ -20,10 +20,47 @@ body {
 @media (min-width: 700px) {
   body {
     grid-template-areas: "header  header  header"
-                          "links   content content"
-                          "footer  footer  footer";
+                         "links   content content"
+                         "footer  footer  footer";
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 170px 1fr 1fr;
+  }
+
+  nav ul li {
+    padding: 7px;
+  }
+}
+
+/* Mobile. */
+@media (max-width: 700px) {
+  nav {
+    background: #333333 !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul {
+    margin: 0;
+    padding: 7px; /* Again? */
+  }
+
+  nav ul li {
+    display: inline-block;
+    padding: 0 16px;
+    font-weight: bold;
+    text-size: 18pt; /* Doesn't work */
+  }
+
+  nav ul li a, nav ul li a:visited {
+    color: white;
+  }
+
+  nav ul li a:hover {
+    color: crimson;
+  }
+
+  nav ul li a.inactive {
+    color: lightgray;
   }
 }
 
@@ -50,6 +87,7 @@ main {
   background: #FFF9ED;
   grid-area: content;
   padding: 7px;
+  padding-right: 50px;
 }
 
 footer {
@@ -77,4 +115,12 @@ a.inactive {
 
 html {
   font-family: Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 0;
 }

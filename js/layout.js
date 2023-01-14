@@ -41,7 +41,9 @@ $$("nav a").forEach((a) => {
         fetchedDocument.innerHTML = text
         const body = fetchedDocument.querySelector("body main")
         $("body main").replaceWith(body)
-        setTimeout(makeCurrentRouteNotClickable, 3000)
+        console.log(document.title)
+        document.title = fetchedDocument.querySelector("title")
+        console.log(document.title) /* FIXME */
 
         // Rerun initialiser functions.
         makeCurrentRouteNotClickable()
