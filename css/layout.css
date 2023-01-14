@@ -66,3 +66,11 @@ footer > div {
   padding-top: 20px;
   padding-bottom: 30px;
 }
+
+/* TODO: Extract into a separate file. */
+a.inactive {
+  pointer-events: none;
+  cursor: default;
+  color: black;
+  text-decoration: none;
+}
