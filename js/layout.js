@@ -5,8 +5,8 @@ const $$ = document.querySelectorAll.bind(document)
 const year = new Date().getFullYear()
 $(".year").innerText = year.toString()
 
-// Disable current route in navigation.
-function makeCurrentRouteNotClickable() {
+// Disable current route link in navigation.
+function disableCurrentRouteLink() {
   const currentRoute = location.pathname.replace(/\.html$/, "")
   $$("nav a").forEach((a) => {
     const route = new URL(a.href.replace(/\.html$/, ""))
@@ -18,17 +18,24 @@ function makeCurrentRouteNotClickable() {
   })
 }
 
-makeCurrentRouteNotClickable()
-
 // Rewrite development URLs to include .html.
-if (location.port !== "") {
-  $$("nav a[href^='/']").forEach((a) => {
-    const route = new URL(a.href)
-    if (route.pathname !== "/") {
-      a.href = `${a.href}.html`
-    }
-  })
+function rewriteDevelopmentURLs() {
+  if (location.port !== "") {
+    $$("a[href^='/']").forEach((a) => {
+      const route = new URL(a.href)
+      if (route.pathname !== "/") {
+        a.href = `${a.href}.html`
+      }
+    })
+  }
 }
+
+function setUp() {
+  disableCurrentRouteLink()
+  rewriteDevelopmentURLs()
+}
+
+setUp()
 
 // Don't blink.
 $$("nav a").forEach((a) => {
@@ -44,7 +51,7 @@ $$("nav a").forEach((a) => {
         document.title = fetchedDocument.title
 
         // Rerun initialiser functions.
-        makeCurrentRouteNotClickable()
+        setUp()
       })
     })
   })

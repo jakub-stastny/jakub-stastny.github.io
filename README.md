@@ -9,3 +9,4 @@ Purpose? Audience?
 # TODO
 
 - Fix the back button.
+- Favicon(s) in various sizes.
