@@ -96,7 +96,7 @@ nav ul {
 main {
   background: #FFF9ED;
   grid-area: content;
-  padding: 7px;
+  padding: 1ex 2em;
   padding-right: 50px;
 }
 
