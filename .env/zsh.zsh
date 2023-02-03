@@ -1,5 +1,6 @@
-export PROJECT_ROOT=$PWD
+#export PROJECT_ROOT=$PWD
 
+load ~/.zsh/environments/helpers.zsh && save-function-list
 load ~/.zsh/environments/basic.zsh
 
 serve() {
@@ -8,6 +9,8 @@ serve() {
 }
 
 # TODO: nohup 2> /dev/null or what.
-edit() {
+edit-project() {
   goneovim -p README.md *.html css/* js/*
 }
+
+report-custom-functions
