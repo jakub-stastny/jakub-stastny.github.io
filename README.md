@@ -8,18 +8,12 @@ Run helper `serve` (defined in [.env/zsh.zsh]()).
 
 ## Top-priority
 
+- Am I going to be using GH pages? It seems like they send /dev and other repos to my CNAME domain as well, rather than just this one.
 - Is there a babashka/Deno version of Python HTTP server? Custom server could do overrides like /page -> /page.html.
-- Static page generator (possibly a custom one in babashka).
 
 ## Fixes
 
-- Helpers: advertise helper functions from .env/zsh.zsh.
-- HTML-encode my email.
 - Fix the back button.
-
-## Wiki
-
-- Wiki for H4H, what's the path etc.
 
 ## Design
 
@@ -29,7 +23,3 @@ Run helper `serve` (defined in [.env/zsh.zsh]()).
 ## Promo
 
 - Put into my Reddit profile.
-
-## Once I'm an OK astrologer
-
-- Report template & start doing full chart readings (I might charge for these).
