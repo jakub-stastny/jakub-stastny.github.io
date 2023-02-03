@@ -18,8 +18,27 @@ document.body.prepend(header)
 // Navigation links.
 const links = {
   "/about": "About me",
+  "/astrology": "Astrology readings",
   "/contact": "Contact",
-  "/astrology": "Astrology readings"
+}
+
+function setTitle() {
+  const href = window.location.pathname.split(".")[0]
+  document.title = links[href]
+}
+
+const metadata = {
+  charset: "utf-8",
+  viewport: "width=device-width, initial-scale=1.0"
+}
+
+function setMetadata() {
+  Object.entries(metadata).forEach(([ key, value ]) => {
+    const meta = document.createElement("meta")
+    meta.name = key
+    meta.content = value
+    document.head.appendChild(meta)
+  })
 }
 
 Object.entries(links).forEach(([ href, label ]) => {
@@ -66,6 +85,8 @@ function rewriteDevelopmentURLs() {
 function setUp() {
   disableCurrentRouteLink()
   rewriteDevelopmentURLs()
+  setTitle()
+  setMetadata()
 }
 
 setUp()
