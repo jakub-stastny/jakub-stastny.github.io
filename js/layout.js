@@ -4,9 +4,9 @@ const $$ = document.querySelectorAll.bind(document)
 const header = document.createElement("header")
 
 // Set logo.
-const logo = document.createElement("img")
-logo.src = "/img/logo.png"
-header.appendChild(logo)
+// const logo = document.createElement("img")
+// logo.src = "/img/logo.png"
+// header.appendChild(logo)
 
 const nav = document.createElement("nav")
 const navLinks = document.createElement("ul")
