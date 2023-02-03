@@ -26,7 +26,7 @@ const links = {
 
 function setTitle() {
   const href = window.location.pathname.split(".")[0]
-  document.title = links[href]
+  document.title = links[href] || $("main > h1").innerText
 }
 
 // Doesn't work for charset, at least not in Chrome.
