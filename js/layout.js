@@ -16,7 +16,11 @@ document.body.prepend(nav)
 document.body.prepend(header)
 
 // Navigation links.
-const links = {"/about": "About me", "/contact": "Contact", "/astrology": "Astrology readings"}
+const links = {
+  "/about": "About me",
+  "/contact": "Contact",
+  "/astrology": "Astrology readings"
+}
 
 Object.entries(links).forEach(([ href, label ]) => {
   const li = document.createElement("li")

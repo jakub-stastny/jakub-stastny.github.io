@@ -1,3 +1,8 @@
+/* Top-level CSS file for layout-related functionality.
+ *
+ * All the other files should be @imported into this
+ * one in order to keep the HTML files stable. */
+
 html {
   width: 100%;
   height: 100%;
