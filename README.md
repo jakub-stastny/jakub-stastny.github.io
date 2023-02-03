@@ -12,6 +12,7 @@ The first commit when I finally got how this should be done is `10597010` from `
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="/css/layout.css" />
     <script type="module" src="/js/layout.js"></script>
   </head>
