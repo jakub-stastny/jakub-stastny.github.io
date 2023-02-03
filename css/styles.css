@@ -18,3 +18,9 @@ a.inactive {
   color: black;
   text-decoration: none;
 }
+
+table.definitions td:first-child {
+  text-align: right;
+  font-weight: bold;
+  padding-right: 0.7em;
+}

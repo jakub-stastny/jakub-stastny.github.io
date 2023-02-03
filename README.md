@@ -37,6 +37,7 @@ Run helper `serve` (defined in [.env/zsh.zsh]()).
 
 ## Fixes
 
+- Check robots.txt format.
 - Fix the back button.
 - Does the metadata setting works? See about page, there's a sign, it seems broken now.
 
