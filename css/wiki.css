@@ -1,0 +1,5 @@
+/* Loaded conditionally for everything under /wiki. */
+.subtitle {
+  font-style: italic;
+  color: darkgrey;
+}

@@ -16,9 +16,11 @@ document.body.prepend(nav)
 document.body.prepend(header)
 
 // Navigation links.
+// TODO: Shorten for small displays, it doesn't fit on one line (Astrology readings -> Readings etc)
 const links = {
   "/about": "About me",
   "/astrology": "Astrology readings",
+  "/wiki": "Wiki",
   "/contact": "Contact",
 }
 
@@ -27,8 +29,8 @@ function setTitle() {
   document.title = links[href]
 }
 
+// Doesn't work for charset, at least not in Chrome.
 const metadata = {
-  charset: "utf-8",
   viewport: "width=device-width, initial-scale=1.0"
 }
 
