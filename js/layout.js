@@ -19,7 +19,7 @@ document.body.prepend(header)
 // TODO: Shorten for small displays, it doesn't fit on one line (Astrology readings -> Readings etc)
 const links = {
   "/about": "About me",
-  "/astrology": "Astrology readings",
+  "/astrology-reading": "Astrology reading",
   "/wiki": "Wiki",
   "/contact": "Contact",
 }
