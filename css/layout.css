@@ -101,7 +101,6 @@ main {
 
 footer {
   padding: 0;
-  min-height: 50px;
   background: linear-gradient(#FFF9ED, #ffd899);
   grid-area: footer;
 
@@ -110,6 +109,7 @@ footer {
 }
 
 footer > div {
-  padding-top: 20px;
+  color: maroon;
+  padding-top: 70px;
   padding-bottom: 30px;
 }
