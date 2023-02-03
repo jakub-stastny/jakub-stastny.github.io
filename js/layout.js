@@ -1,10 +1,6 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-// Show current year in the copyright.
-const year = new Date().getFullYear()
-$(".year").innerText = year.toString()
-
 const header = document.createElement("header")
 
 // Set logo.
@@ -31,9 +27,12 @@ Object.entries(links).forEach(([ href, label ]) => {
   navLinks.appendChild(li)
 })
 
-// <li><a href="/">Home</a></li>
-// <li><a href="/about">About me</a></li>
-// <li><a href="/contact">Contact</a></li>
+const footer = document.createElement("footer")
+document.body.appendChild(footer)
+
+const copyrightNote = document.createElement("div")
+copyrightNote.innerHTML = `&copy; ${new Date().getFullYear()} Jakub Šťastný`
+footer.appendChild(copyrightNote)
 
 // Disable current route link in navigation.
 function disableCurrentRouteLink() {
