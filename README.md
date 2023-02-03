@@ -2,10 +2,26 @@
 
 My personal web site.
 
-# Init data
+## Init data
 
-The first commit when I finally got how this should be done is `24871b80` from `Fri Feb 3 11:19:17 2023 -0600` from when I was in Emiliano Zapata, Morelos.
+The first commit when I finally got how this should be done is `10597010` from `Fri Feb 3 11:19:17 2023 -0600` from when I was in Emiliano Zapata, Morelos.
 
+# Template
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/layout.css" />
+    <script type="module" src="/js/layout.js"></script>
+  </head>
+
+  <body>
+    <main>
+    </main>
+  </body>
+</html>
+```
 
 # Development
 
@@ -21,6 +37,13 @@ Run helper `serve` (defined in [.env/zsh.zsh]()).
 ## Fixes
 
 - Fix the back button.
+- Does the metadata setting works? See about page, there's a sign, it seems broken now.
+
+## Features
+
+- Google Analytics.
+- Large screens: "links WHITESPACE content content WHITESPACE", too long text is hard to read.
+- Copyleft (Leo Babauta?)
 
 ## Design
 

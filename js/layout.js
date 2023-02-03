@@ -82,6 +82,13 @@ function rewriteDevelopmentURLs() {
   }
 }
 
+if (window.location.pathname.split("/")[1] === "wiki") {
+  const stylesheet = document.createElement("link")
+  stylesheet.rel = "stylesheet"
+  stylesheet.href = "/css/wiki.css"
+  document.head.appendChild(stylesheet)
+}
+
 function setUp() {
   disableCurrentRouteLink()
   rewriteDevelopmentURLs()
