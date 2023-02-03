@@ -1,10 +1,4 @@
-a.inactive {
-  pointer-events: none;
-  cursor: default;
-  color: black;
-  text-decoration: none;
-}
-
+/* General theme */
 html {
   font-family: Helvetica, sans-serif;
 }
@@ -15,4 +9,12 @@ a {
 
 ul {
   padding-left: 0;
+}
+
+/* Specific elements */
+a.inactive {
+  pointer-events: none;
+  cursor: default;
+  color: black;
+  text-decoration: none;
 }
