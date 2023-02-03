@@ -48,7 +48,6 @@ body {
     display: inline-block;
     padding: 0 16px;
     font-weight: bold;
-    text-size: 18pt; /* Doesn't work */
   }
 
   nav ul li a, nav ul li a:visited {
@@ -66,7 +65,7 @@ body {
 
 header {
   min-height: 70px;
-  background: skyblue;
+  background: #bbe0ff;
   grid-area: header;
 
   display: flex;

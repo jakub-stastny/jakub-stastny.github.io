@@ -5,6 +5,36 @@ const $$ = document.querySelectorAll.bind(document)
 const year = new Date().getFullYear()
 $(".year").innerText = year.toString()
 
+const header = document.createElement("header")
+
+// Set logo.
+const logo = document.createElement("img")
+logo.src = "/img/logo.png"
+header.appendChild(logo)
+
+const nav = document.createElement("nav")
+const navLinks = document.createElement("ul")
+nav.appendChild(navLinks)
+
+document.body.prepend(nav)
+document.body.prepend(header)
+
+// Navigation links.
+const links = {"/about": "About me", "/contact": "Contact", "/astrology": "Astrology readings"}
+
+Object.entries(links).forEach(([ href, label ]) => {
+  const li = document.createElement("li")
+  const anchor = document.createElement("a")
+  anchor.href = href
+  anchor.innerText = label
+  li.appendChild(anchor)
+  navLinks.appendChild(li)
+})
+
+// <li><a href="/">Home</a></li>
+// <li><a href="/about">About me</a></li>
+// <li><a href="/contact">Contact</a></li>
+
 // Disable current route link in navigation.
 function disableCurrentRouteLink() {
   const currentRoute = location.pathname.replace(/\.html$/, "")

@@ -16,7 +16,6 @@ Run helper `serve` (defined in [.env/zsh.zsh]()).
 - Helpers: advertise helper functions from .env/zsh.zsh.
 - HTML-encode my email.
 - Fix the back button.
-- Favicon(s) in various sizes.
 
 ## Wiki
 
@@ -25,6 +24,7 @@ Run helper `serve` (defined in [.env/zsh.zsh]()).
 ## Design
 
 - Draw a logo.
+- Favicon(s) in various sizes.
 
 ## Promo
 
