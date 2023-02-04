@@ -3,9 +3,21 @@ import { $, $$, element } from "./helpers.js"
 import("./google-analytics.js")
 
 const nav = element("nav", {}, element("ul"))
+const header = element("header")
 
 document.body.prepend(nav)
-document.body.prepend(element("header"))
+document.body.prepend(header)
+
+const logo = element("img", {src: "/img/logo.png"})
+header.appendChild(logo)
+
+logo.addEventListener("load", (e) => {
+  console.log(`${logo.width}x${logo.height}`)
+  logo.style.width = "100%"
+  header.style.height = `${logo.height}px`
+  console.log(`${logo.width}x${logo.height}`)
+  logo.style.display = "none"
+})
 
 // Navigation links.
 // TODO: Shorten for small displays, it doesn't fit on one line (Astrology readings -> Readings etc)

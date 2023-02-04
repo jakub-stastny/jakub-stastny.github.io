@@ -3,14 +3,12 @@
     grid-template-areas: "header  header  header"
                          "links   content content"
                          "footer  footer  footer";
-    grid-template-rows: 240px 1fr auto;
+    grid-template-rows: auto 1fr auto;
     grid-template-columns: 170px 1fr 1fr;
   }
 
   header {
-    min-height: 240px;
-    background: var(--header-bg-colour) url("/img/logo.png") no-repeat;
-    /* background: linear-gradient(var(--header-bg-colour), 50%, #FFF) url("/img/logo.png") no-repeat; */
+    background-attachment: fixed; /* Stopped working. */
   }
 
   nav ul li {

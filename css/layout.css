@@ -1,6 +1,7 @@
 @charset "utf-8";
 
-/* Conditional importing doesn't seem to work @import file screen and (orientation: landscape); */
+/* Conditional importing doesn't seem to work:
+ * @import file screen and (orientation: landscape); */
 @import "mobile.css";
 @import "desktop.css";
 @import "styles.css";
@@ -16,10 +17,20 @@ html {
   height: 100%;
 }
 
+body {
+  margin: 0;
+  display: grid;
+  min-height: 100%;
+}
+
 /* Header */
 header {
   grid-area: header;
+  background-image: url("/img/logo.png"), linear-gradient(var(--header-bg-colour), #FFF);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
 
 /* Navigation */
 nav {
