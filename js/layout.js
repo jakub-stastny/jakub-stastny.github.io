@@ -26,29 +26,21 @@ const metadata = {
   viewport: "width=device-width, initial-scale=1.0"
 }
 
-function setMetadata() {
-  Object.entries(metadata).forEach(([ key, value ]) => {
-    document.head.appendChild(element("meta", {name: key, content: value}))
-  })
-}
+Object.entries(metadata).forEach(([ key, value ]) => {
+  document.head.appendChild(element("meta", {name: key, content: value}))
+})
 
-const resources = [
-  {rel: "icon", type: "image/png", href: "/img/icon.png"}
-]
+document.head.appendChild(
+  element("link", {rel: "icon", type: "image/png", href: "/img/icon.png"}))
 
-function addResources() {
-  resources.forEach(resource => {
-    document.head.appendChild(element("link", resource))
-  })
-}
-
+/* Display navigation links. */
 Object.entries(links).forEach(([ href, label ]) => {
   nav.querySelector("ul").appendChild(
     element("li", {},
       element("a", {href: href, innerText: label})))
 })
 
-
+/* Footer. */
 document.body.appendChild(element("footer", {},
   element("div", {innerHTML: `<abbr title="All the content of this website is released in the public domain. Use it as you wish.">Uncopyright</abbr> ${new Date().getFullYear()}`})))
 
@@ -74,8 +66,6 @@ if (window.location.pathname.split("/")[1] === "wiki") {
 function setUp() {
   disableCurrentRouteLink()
   setTitle()
-  setMetadata()
-  addResources()
 }
 
 /* Replace pages without re-rendering. */
