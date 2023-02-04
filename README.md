@@ -34,10 +34,6 @@ Run helper `serve` (defined in [.env/zsh.zsh]()).
 - Am I going to be using GH pages? It seems like they send /dev and other repos to my CNAME domain as well, rather than just this one.
 - Is there a babashka/Deno version of Python HTTP server? Custom server could do overrides like /page -> /page.html.
 
-## Fixes
-
-- Fix the back button.
-
 ## Features
 
 - Google Analytics.

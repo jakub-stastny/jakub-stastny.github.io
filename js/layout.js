@@ -116,21 +116,28 @@ function setUp() {
 setUp()
 
 // Don't blink.
+function replacePage(url) {
+  fetch(url).then((response) => {
+    response.text().then((text) => {
+      const parser = new DOMParser()
+      const fetchedDocument = parser.parseFromString(text, "text/html")
+      const body = fetchedDocument.querySelector("body main")
+      $("body main").replaceWith(body)
+
+      // Rerun initialiser functions.
+      setUp()
+    })
+  })
+}
+
 $$("nav a").forEach((a) => {
   a.addEventListener("click", (e) => {
     e.preventDefault()
     history.pushState({}, "", a.href)
-    fetch(a.href).then((response) => {
-      response.text().then((text) => {
-        const parser = new DOMParser()
-        const fetchedDocument = parser.parseFromString(text, "text/html")
-        const body = fetchedDocument.querySelector("body main")
-        $("body main").replaceWith(body)
-        document.title = fetchedDocument.title
-
-        // Rerun initialiser functions.
-        setUp()
-      })
-    })
+    replacePage(a.href)
   })
+})
+
+window.addEventListener("popstate", (e) => {
+  replacePage(window.location.pathname)
 })
