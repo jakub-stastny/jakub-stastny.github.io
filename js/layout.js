@@ -1,11 +1,17 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
+function element(name, properties = {}) {
+  const element = document.createElement(name)
+  Object.entries(properties).forEach(([ key, value ]) => element[key] = value)
+  return element
+}
+
 // Google Analytics
 if (location.port === "") {
-  const ga = document.createElement("script")
-  ga.async = true
-  ga.src = "https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3"
+  const ga = element("script", {
+    async: true,
+    src: "https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3"})
   document.head.appendChild(ga)
 
   window.dataLayer = window.dataLayer || []
@@ -14,15 +20,15 @@ if (location.port === "") {
   gtag('config', 'G-KQSJ36RMR3')
 }
 
-const header = document.createElement("header")
+const header = element("header")
 
 // Set logo.
-// const logo = document.createElement("img")
+// const logo = element("img")
 // logo.src = "/img/logo.png"
 // header.appendChild(logo)
 
-const nav = document.createElement("nav")
-const navLinks = document.createElement("ul")
+const nav = element("nav")
+const navLinks = element("ul")
 nav.appendChild(navLinks)
 
 document.body.prepend(nav)
@@ -49,10 +55,7 @@ const metadata = {
 
 function setMetadata() {
   Object.entries(metadata).forEach(([ key, value ]) => {
-    const meta = document.createElement("meta")
-    meta.name = key
-    meta.content = value
-    document.head.appendChild(meta)
+    document.head.appendChild(element("meta", {name: key, content: value}))
   })
 }
 
@@ -62,27 +65,21 @@ const resources = [
 
 function addResources() {
   resources.forEach(resource => {
-    const link = document.createElement("link")
-    Object.entries(resource).forEach(([ key, value ]) => {
-      link[key] = value
-    })
-    document.head.appendChild(link)
+    document.head.appendChild(element("link", resource))
   })
 }
 
 Object.entries(links).forEach(([ href, label ]) => {
-  const li = document.createElement("li")
-  const anchor = document.createElement("a")
-  anchor.href = href
-  anchor.innerText = label
+  const li = element("li")
+  const anchor = element("a", {href: href, innerText: label})
   li.appendChild(anchor)
   navLinks.appendChild(li)
 })
 
-const footer = document.createElement("footer")
+const footer = element("footer")
 document.body.appendChild(footer)
 
-const copyrightNote = document.createElement("div")
+const copyrightNote = element("div")
 copyrightNote.innerHTML = `<abbr title="All the content of this website is released in the public domain. Use it as you wish.">Uncopyright</abbr> ${new Date().getFullYear()}`
 footer.appendChild(copyrightNote)
 
@@ -100,10 +97,7 @@ function disableCurrentRouteLink() {
 }
 
 if (window.location.pathname.split("/")[1] === "wiki") {
-  const stylesheet = document.createElement("link")
-  stylesheet.rel = "stylesheet"
-  stylesheet.href = "/css/wiki.css"
-  document.head.appendChild(stylesheet)
+  document.head.appendChild(element("link", {rel: "stylesheet", href: "/css/wiki.css"}))
 }
 
 function setUp() {
