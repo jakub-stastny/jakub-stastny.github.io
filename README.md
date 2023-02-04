@@ -29,13 +29,8 @@ Run `./bin/serve` ([Babashka](https://babashka.org) is required).
 
 # TODO
 
-## Babashka server
-
-- Override /page -> /page.html (and remove that code from layout.js).
-
 ## Features
 
-- Google Analytics.
 - Large screens: "links WHITESPACE content content WHITESPACE", too long text is hard to read.
 
 ## Design

@@ -1,6 +1,19 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
+// Google Analytics
+if (location.port === "") {
+  const ga = document.createElement("script")
+  ga.async = true
+  ga.src = "https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3"
+  document.head.appendChild(ga)
+
+  window.dataLayer = window.dataLayer || []
+  function gtag() { dataLayer.push(arguments) }
+  gtag('js', new Date())
+  gtag('config', 'G-KQSJ36RMR3')
+}
+
 const header = document.createElement("header")
 
 // Set logo.
