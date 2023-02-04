@@ -36,21 +36,13 @@ Run helper `serve` (defined in [.env/zsh.zsh]()).
 
 ## Fixes
 
-- Check robots.txt format.
 - Fix the back button.
-- Does the metadata setting works? See about page, there's a sign, it seems broken now.
 
 ## Features
 
 - Google Analytics.
 - Large screens: "links WHITESPACE content content WHITESPACE", too long text is hard to read.
-- Copyleft (Leo Babauta?)
 
 ## Design
 
-- Draw a logo.
-- Favicon(s) in various sizes.
-
-## Promo
-
-- Put into my Reddit profile.
+- Hero image(s).

@@ -1,3 +1,4 @@
-Allow: *
+User-agent: *
+
 Disallow: /tips
 Disallow: /tips.html

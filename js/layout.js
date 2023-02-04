@@ -70,7 +70,7 @@ const footer = document.createElement("footer")
 document.body.appendChild(footer)
 
 const copyrightNote = document.createElement("div")
-copyrightNote.innerHTML = `&copy; ${new Date().getFullYear()} Jakub Šťastný`
+copyrightNote.innerHTML = `<abbr title="All the content of this website is released in the public domain. Use it as you wish.">Uncopyright</abbr> ${new Date().getFullYear()}`
 footer.appendChild(copyrightNote)
 
 // Disable current route link in navigation.
