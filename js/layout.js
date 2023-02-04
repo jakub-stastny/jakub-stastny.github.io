@@ -3,11 +3,14 @@ const $$ = document.querySelectorAll.bind(document)
 
 function element(name, properties = {}, content) {
   const element = document.createElement(name)
+
   Object.entries(properties).forEach(([ key, value ]) => element[key] = value)
+
   if (content && content.appendChild) {
     // Nested element
     element.appendChild(content)
-  }
+  } // TODO: arrays.
+
   return element
 }
 
@@ -25,15 +28,7 @@ if (location.port === "") {
 }
 
 const header = element("header")
-
-// Set logo.
-// const logo = element("img")
-// logo.src = "/img/logo.png"
-// header.appendChild(logo)
-
-const nav = element("nav")
-const navLinks = element("ul")
-nav.appendChild(navLinks)
+const nav = element("nav", {}, element("ul"))
 
 document.body.prepend(nav)
 document.body.prepend(header)
@@ -74,15 +69,14 @@ function addResources() {
 }
 
 Object.entries(links).forEach(([ href, label ]) => {
-  navLinks.appendChild(
+  nav.querySelector("ul").appendChild(
     element("li", {},
       element("a", {href: href, innerText: label})))
 })
 
-const footer = element("footer")
-document.body.appendChild(footer)
 
-footer.appendChild(element("div", {innerHTML: `<abbr title="All the content of this website is released in the public domain. Use it as you wish.">Uncopyright</abbr> ${new Date().getFullYear()}`}))
+document.body.appendChild(element("footer", {},
+  element("div", {innerHTML: `<abbr title="All the content of this website is released in the public domain. Use it as you wish.">Uncopyright</abbr> ${new Date().getFullYear()}`})))
 
 // Disable current route link in navigation.
 function disableCurrentRouteLink() {
