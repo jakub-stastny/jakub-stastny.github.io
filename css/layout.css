@@ -1,6 +1,14 @@
-/* It doesn't work if it's at the bottom of the page. */
-/* Is it blocking though? I expect (and hope) not. */
+@charset "utf-8";
+
+@import "vars.css"
+@import "desktop.css" screen and (orientation: landscape);
+@import "mobile.css" screen and (orientation: portrait);
 @import "styles.css";
+
+/* For now, until I figure out how to make vars.css work. */
+:root {
+  --bg-colour: #FFF9ED;
+}
 
 html {
   width: 100%;
@@ -20,71 +28,11 @@ body {
   grid-template-columns: 100%;
 }
 
-/* Desktop */
-@media (min-width: 1000px) {
-  header {
-    min-height: 240px;
-    background: #0a1e58 url("/img/logo.png") no-repeat;
-    /* background: linear-gradient(#0a1e58, 50%, #FFF) url("/img/logo.png") no-repeat; */
-  }
-
-  body {
-    grid-template-areas: "header  header  header"
-                         "links   content content"
-                         "footer  footer  footer";
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 170px 1fr 1fr;
-  }
-
-  nav ul li {
-    padding: 7px;
-  }
-}
-
-/* Mobile. */
-@media (max-width: 1000px) {
-  header {
-    min-height: 120px;
-    background: #0a1e58 url("/img/logo.png") no-repeat;
-    /* background-size: /1* TODO: check values, can it shrink to stretch? *1/ */
-  }
-
-  nav {
-    background: #333333 !important;
-    display: flex;
-    justify-content: center;
-  }
-
-  nav ul {
-    margin: 0;
-    padding: 7px; /* Again? */
-  }
-
-  nav ul li {
-    display: inline-block;
-    padding: 0 16px;
-    font-weight: bold;
-  }
-
-  nav ul li a, nav ul li a:visited {
-    color: white;
-  }
-
-  nav ul li a:hover {
-    color: crimson;
-  }
-
-  nav ul li a.inactive {
-    color: lightgray;
-  }
-}
-
 header {
   grid-area: header;
 }
 
 nav {
-  background: #FFF9ED;
   grid-area: links;
   padding: 7px;
 }
@@ -94,7 +42,7 @@ nav ul {
 }
 
 main {
-  background: #FFF9ED;
+  background-color: var(--bg-colour);
   grid-area: content;
   padding: 1ex 2em;
   padding-right: 50px;
@@ -102,7 +50,7 @@ main {
 
 footer {
   padding: 0;
-  background: linear-gradient(#FFF9ED, #ffd899);
+  background: linear-gradient(var(--bg-colour), #ffd899);
   grid-area: footer;
 
   display: flex;
