@@ -1,0 +1,47 @@
+#!/usr/bin/env bb
+
+(ns http-server
+  (:require [babashka.fs :as fs]
+            [clojure.string :as str]
+            [org.httpkit.server :as server]))
+
+(defonce port 9000)
+
+(defonce mime-types
+  {"html" "text/html"
+   "js"   "text/javascript"
+   "css"  "text/css"
+   "png"  "image/png"
+   "jpg"  "image/jpeg"
+   "svg"  "image/svg+xml"})
+
+(defn get-mime-type [ext] (or (get mime-types ext) "application/octet-stream"))
+
+(defn get-ext [path] (last (re-find #"\.(\w+)$" path)))
+
+(defn standardise-path [uri]
+  (let [path (str/replace-first uri #"^/" "")]
+    (if (get-ext path) path (str path ".html"))))
+
+(defn serve [path]
+  (let [mime-type (get-mime-type (get-ext path))]
+    (println (str " ... HTTP 200, MIME " mime-type "."))
+    {:headers {"Content-Type" mime-type} :body (fs/file path)}))
+
+(defn not-found [path]
+  (println " ... HTTP 404.")
+  {:status 404 :body (str "File not found: " path "\n")})
+
+(defn handler [request]
+  (let [http-method (str/upper-case (name (:request-method request)))
+        server-path (:uri request)
+        fs-path (if (= server-path "/")
+                  "index.html"
+                  (standardise-path server-path))]
+    (print (str "~ HTTP " http-method " " server-path " -> " fs-path))
+    (if (fs/readable? fs-path) (serve fs-path) (not-found fs-path))))
+
+(server/run-server handler {:port port})
+(println (str "~ Starting HTTP server at port " port ".\n"))
+
+@(promise)

@@ -25,14 +25,13 @@ The first commit when I finally got how this should be done is `10597010` from `
 
 # Development
 
-Run helper `serve` (defined in [.env/zsh.zsh]()).
+Run `./bin/serve` ([Babashka](https://babashka.org) is required).
 
 # TODO
 
-## Top-priority
+## Babashka server
 
-- Am I going to be using GH pages? It seems like they send /dev and other repos to my CNAME domain as well, rather than just this one.
-- Is there a babashka/Deno version of Python HTTP server? Custom server could do overrides like /page -> /page.html.
+- Override /page -> /page.html (and remove that code from layout.js).
 
 ## Features
 
@@ -42,3 +41,7 @@ Run helper `serve` (defined in [.env/zsh.zsh]()).
 ## Design
 
 - Hero image(s).
+
+## Hosting
+
+- Consider hosting elsewhere. GH pages stopped working for subprojects, i. e. jakub-stastny.github.io/dev
