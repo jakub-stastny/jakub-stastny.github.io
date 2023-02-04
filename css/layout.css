@@ -24,7 +24,8 @@ body {
 @media (min-width: 1000px) {
   header {
     min-height: 240px;
-    background: #bbe0ff url("/img/logo.png") no-repeat;
+    background: #0a1e58 url("/img/logo.png") no-repeat;
+    /* background: linear-gradient(#0a1e58, 50%, #FFF) url("/img/logo.png") no-repeat; */
   }
 
   body {
@@ -44,7 +45,7 @@ body {
 @media (max-width: 1000px) {
   header {
     min-height: 120px;
-    background: #bbe0ff url("/img/logo.mobile.png");
+    background: #0a1e58 url("/img/logo.png") no-repeat;
     /* background-size: /1* TODO: check values, can it shrink to stretch? *1/ */
   }
 

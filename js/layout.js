@@ -29,8 +29,8 @@ function setTitle() {
   document.title = links[href] || $("main > h1").innerText
 }
 
-// Doesn't work for charset, at least not in Chrome.
 const metadata = {
+  charset: "utf-8", // This doesn't work in Chrome.
   viewport: "width=device-width, initial-scale=1.0"
 }
 
@@ -40,6 +40,20 @@ function setMetadata() {
     meta.name = key
     meta.content = value
     document.head.appendChild(meta)
+  })
+}
+
+const resources = [
+  {rel: "icon", type: "image/png", href: "/img/icon.png"}
+]
+
+function addResources() {
+  resources.forEach(resource => {
+    const link = document.createElement("link")
+    Object.entries(resource).forEach(([ key, value ]) => {
+      link[key] = value
+    })
+    document.head.appendChild(link)
   })
 }
 
@@ -96,6 +110,7 @@ function setUp() {
   rewriteDevelopmentURLs()
   setTitle()
   setMetadata()
+  addResources()
 }
 
 setUp()
