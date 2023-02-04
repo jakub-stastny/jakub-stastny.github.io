@@ -1,3 +1,5 @@
+import { element } from "./helpers.js"
+
 if (location.port === "") {
   document.head.appendChild(
     element("script", {
