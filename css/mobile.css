@@ -8,10 +8,6 @@
     grid-template-columns: 100%;
   }
 
-  header {
-    /* min-height: 120px; */
-  }
-
   nav {
     background: #333333;
     display: flex;

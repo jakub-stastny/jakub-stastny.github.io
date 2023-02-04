@@ -19,6 +19,7 @@ html {
 
 body {
   margin: 0;
+  background: var(--bg-colour);
   display: grid;
   min-height: 100%;
 }
@@ -44,10 +45,8 @@ nav ul {
 
 /* Main */
 main {
-  background-color: var(--bg-colour);
+  background: var(--bg-colour);
   grid-area: content;
-  padding: 1ex 2em;
-  padding-right: 50px;
 }
 
 /* Footer */
