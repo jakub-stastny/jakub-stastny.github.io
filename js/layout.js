@@ -1,18 +1,22 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-function element(name, properties = {}) {
+function element(name, properties = {}, content) {
   const element = document.createElement(name)
   Object.entries(properties).forEach(([ key, value ]) => element[key] = value)
+  if (content && content.appendChild) {
+    // Nested element
+    element.appendChild(content)
+  }
   return element
 }
 
 // Google Analytics
 if (location.port === "") {
-  const ga = element("script", {
-    async: true,
-    src: "https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3"})
-  document.head.appendChild(ga)
+  document.head.appendChild(
+    element("script", {
+      async: true,
+      src: "https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3"}))
 
   window.dataLayer = window.dataLayer || []
   function gtag() { dataLayer.push(arguments) }
@@ -70,18 +74,15 @@ function addResources() {
 }
 
 Object.entries(links).forEach(([ href, label ]) => {
-  const li = element("li")
-  const anchor = element("a", {href: href, innerText: label})
-  li.appendChild(anchor)
-  navLinks.appendChild(li)
+  navLinks.appendChild(
+    element("li", {},
+      element("a", {href: href, innerText: label})))
 })
 
 const footer = element("footer")
 document.body.appendChild(footer)
 
-const copyrightNote = element("div")
-copyrightNote.innerHTML = `<abbr title="All the content of this website is released in the public domain. Use it as you wish.">Uncopyright</abbr> ${new Date().getFullYear()}`
-footer.appendChild(copyrightNote)
+footer.appendChild(element("div", {innerHTML: `<abbr title="All the content of this website is released in the public domain. Use it as you wish.">Uncopyright</abbr> ${new Date().getFullYear()}`}))
 
 // Disable current route link in navigation.
 function disableCurrentRouteLink() {
@@ -97,7 +98,8 @@ function disableCurrentRouteLink() {
 }
 
 if (window.location.pathname.split("/")[1] === "wiki") {
-  document.head.appendChild(element("link", {rel: "stylesheet", href: "/css/wiki.css"}))
+  document.head.appendChild(
+    element("link", {rel: "stylesheet", href: "/css/wiki.css"}))
 }
 
 function setUp() {
