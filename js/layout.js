@@ -86,18 +86,6 @@ function disableCurrentRouteLink() {
   })
 }
 
-// Rewrite development URLs to include .html.
-function rewriteDevelopmentURLs() {
-  if (location.port !== "") {
-    $$("a[href^='/']").forEach((a) => {
-      const route = new URL(a.href)
-      if (route.pathname !== "/") {
-        a.href = `${a.href}.html`
-      }
-    })
-  }
-}
-
 if (window.location.pathname.split("/")[1] === "wiki") {
   const stylesheet = document.createElement("link")
   stylesheet.rel = "stylesheet"
@@ -107,7 +95,6 @@ if (window.location.pathname.split("/")[1] === "wiki") {
 
 function setUp() {
   disableCurrentRouteLink()
-  rewriteDevelopmentURLs()
   setTitle()
   setMetadata()
   addResources()
