@@ -1,13 +1,14 @@
 @charset "utf-8";
 
-@import "vars.css"
-@import "desktop.css" screen and (orientation: landscape);
-@import "mobile.css" screen and (orientation: portrait);
+/* Conditional importing doesn't seem to work @import file screen and (orientation: landscape); */
+@import "mobile.css";
+@import "desktop.css";
 @import "styles.css";
 
-/* For now, until I figure out how to make vars.css work. */
+/* CSS variables */
 :root {
   --bg-colour: #FFF9ED;
+  --header-bg-colour: #0a1e58;
 }
 
 html {
@@ -15,23 +16,12 @@ html {
   height: 100%;
 }
 
-body {
-  margin: 0;
-  display: grid;
-  min-height: 100%;
-
-  grid-template-areas: "header"
-                       "links"
-                       "content"
-                       "footer";
-  grid-template-rows: auto auto 1fr auto;
-  grid-template-columns: 100%;
-}
-
+/* Header */
 header {
   grid-area: header;
 }
 
+/* Navigation */
 nav {
   grid-area: links;
   padding: 7px;
@@ -41,6 +31,7 @@ nav ul {
   list-style-type: none;
 }
 
+/* Main */
 main {
   background-color: var(--bg-colour);
   grid-area: content;
@@ -48,6 +39,7 @@ main {
   padding-right: 50px;
 }
 
+/* Footer */
 footer {
   padding: 0;
   background: linear-gradient(var(--bg-colour), #ffd899);

@@ -1,21 +1,23 @@
-body {
-  grid-template-areas: "header  header  header"
-                       "links   content content"
-                       "footer  footer  footer";
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 170px 1fr 1fr;
-}
+@media screen and (orientation: landscape) {
+  body {
+    grid-template-areas: "header  header  header"
+                         "links   content content"
+                         "footer  footer  footer";
+    grid-template-rows: 240px 1fr auto;
+    grid-template-columns: 170px 1fr 1fr;
+  }
 
-header {
-  min-height: 240px;
-  background: #0a1e58 url("/img/logo.png") no-repeat;
-  /* background: linear-gradient(#0a1e58, 50%, #FFF) url("/img/logo.png") no-repeat; */
-}
+  header {
+    min-height: 240px;
+    background: var(--header-bg-colour) url("/img/logo.png") no-repeat;
+    /* background: linear-gradient(var(--header-bg-colour), 50%, #FFF) url("/img/logo.png") no-repeat; */
+  }
 
-nav ul li {
-  padding: 7px;
-}
+  nav ul li {
+    padding: 7px;
+  }
 
-nav {
-  background: var(--bg-colour);
+  nav {
+    background: var(--bg-colour);
+  }
 }

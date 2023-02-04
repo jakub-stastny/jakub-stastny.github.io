@@ -1,34 +1,49 @@
-header {
-  min-height: 120px;
-  background: #0a1e58 url("/img/logo.png") no-repeat;
-  /* background-size: /1* TODO: check values, can it shrink to stretch? *1/ */
-}
+@media screen and (orientation: portrait) {
+  body {
+    margin: 0;
+    display: grid;
+    min-height: 100%;
 
-nav {
-  background: #333333 !important;
-  display: flex;
-  justify-content: center;
-}
+    grid-template-areas: "header"
+                         "links"
+                         "content"
+                         "footer";
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-columns: 100%;
+  }
 
-nav ul {
-  margin: 0;
-  padding: 7px; /* Again? */
-}
+  header {
+    min-height: 120px;
+    background: var(--header-bg-colour) url("/img/logo.png") no-repeat;
+    /* background-size: /1* TODO: check values, can it shrink to stretch? *1/ */
+  }
 
-nav ul li {
-  display: inline-block;
-  padding: 0 16px;
-  font-weight: bold;
-}
+  nav {
+    background: #333333 !important;
+    display: flex;
+    justify-content: center;
+  }
 
-nav ul li a, nav ul li a:visited {
-  color: white;
-}
+  nav ul {
+    margin: 0;
+    padding: 7px; /* Again? */
+  }
 
-nav ul li a:hover {
-  color: crimson;
-}
+  nav ul li {
+    display: inline-block;
+    padding: 0 16px;
+    font-weight: bold;
+  }
 
-nav ul li a.inactive {
-  color: lightgray;
+  nav ul li a, nav ul li a:visited {
+    color: white;
+  }
+
+  nav ul li a:hover {
+    color: crimson;
+  }
+
+  nav ul li a.inactive {
+    color: lightgray;
+  }
 }
