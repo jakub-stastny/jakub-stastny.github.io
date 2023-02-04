@@ -20,15 +20,10 @@
     position: sticky;
     top: 0;
   }
-}
 
-main {
-  padding: 1ex 2em;
-  padding-right: 50px;
-}
-
-/* Don't allow more that 700px of width, for easy reading. */
-main > * {
-  margin-right: auto;
-  max-width: 700px;
+  /* Don't allow more that 700px of width, for easy reading. */
+  main > * {
+    margin-right: auto;
+    max-width: 700px;
+  }
 }

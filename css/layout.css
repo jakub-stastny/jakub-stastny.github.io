@@ -47,7 +47,9 @@ nav ul {
 main {
   background: var(--bg-colour);
   grid-area: content;
+  padding: 3ex 4em 2ex 3em;
 }
+
 
 /* Footer */
 footer {

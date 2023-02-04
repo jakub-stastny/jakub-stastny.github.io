@@ -11,12 +11,21 @@ document.body.prepend(header)
 const logo = element("img", {src: "/img/logo.png"})
 header.appendChild(logo)
 
-logo.addEventListener("load", (e) => {
+function resizeBackgroundImage() {
+  logo.style.display = "block"
   console.log(`${logo.width}x${logo.height}`)
   logo.style.width = "100%"
   header.style.height = `${logo.height}px`
   console.log(`${logo.width}x${logo.height}`)
   logo.style.display = "none"
+}
+
+logo.addEventListener("load", (e) => {
+  resizeBackgroundImage()
+})
+
+window.addEventListener("resize", () => {
+  resizeBackgroundImage()
 })
 
 // Navigation links.
