@@ -20,13 +20,8 @@ function resizeBackgroundImage() {
   logo.style.display = "none"
 }
 
-logo.addEventListener("load", (e) => {
-  resizeBackgroundImage()
-})
-
-window.addEventListener("resize", () => {
-  resizeBackgroundImage()
-})
+logo.addEventListener("load", resizeBackgroundImage)
+window.addEventListener("resize", resizeBackgroundImage)
 
 // Navigation links.
 // TODO: Shorten for small displays, it doesn't fit on one line (Astrology readings -> Readings etc)
