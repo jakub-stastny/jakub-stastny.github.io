@@ -1,37 +1,11 @@
-const $ = document.querySelector.bind(document)
-const $$ = document.querySelectorAll.bind(document)
+import { $, $$, element } from "./helpers.js"
 
-function element(name, properties = {}, content) {
-  const element = document.createElement(name)
+import("./google-analytics.js")
 
-  Object.entries(properties).forEach(([ key, value ]) => element[key] = value)
-
-  if (content && content.appendChild) {
-    // Nested element
-    element.appendChild(content)
-  } // TODO: arrays.
-
-  return element
-}
-
-// Google Analytics
-if (location.port === "") {
-  document.head.appendChild(
-    element("script", {
-      async: true,
-      src: "https://www.googletagmanager.com/gtag/js?id=G-KQSJ36RMR3"}))
-
-  window.dataLayer = window.dataLayer || []
-  function gtag() { dataLayer.push(arguments) }
-  gtag('js', new Date())
-  gtag('config', 'G-KQSJ36RMR3')
-}
-
-const header = element("header")
 const nav = element("nav", {}, element("ul"))
 
 document.body.prepend(nav)
-document.body.prepend(header)
+document.body.prepend(element("header"))
 
 // Navigation links.
 // TODO: Shorten for small displays, it doesn't fit on one line (Astrology readings -> Readings etc)
@@ -78,7 +52,7 @@ Object.entries(links).forEach(([ href, label ]) => {
 document.body.appendChild(element("footer", {},
   element("div", {innerHTML: `<abbr title="All the content of this website is released in the public domain. Use it as you wish.">Uncopyright</abbr> ${new Date().getFullYear()}`})))
 
-// Disable current route link in navigation.
+/* Disable current route link in navigation. */
 function disableCurrentRouteLink() {
   const currentRoute = location.pathname.replace(/\.html$/, "")
   $$("nav a").forEach((a) => {
@@ -91,6 +65,7 @@ function disableCurrentRouteLink() {
   })
 }
 
+/* Include wiki-specific CSS. */
 if (window.location.pathname.split("/")[1] === "wiki") {
   document.head.appendChild(
     element("link", {rel: "stylesheet", href: "/css/wiki.css"}))
@@ -103,31 +78,19 @@ function setUp() {
   addResources()
 }
 
-setUp()
-
-// Don't blink.
-function replacePage(url) {
-  fetch(url).then((response) => {
-    response.text().then((text) => {
-      const parser = new DOMParser()
-      const fetchedDocument = parser.parseFromString(text, "text/html")
-      const body = fetchedDocument.querySelector("body main")
-      $("body main").replaceWith(body)
-
-      // Rerun initialiser functions.
-      setUp()
+/* Replace pages without re-rendering. */
+import("./replace-page.js").then((module) => {
+  $$("nav a").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault()
+      history.pushState({}, "", a.href)
+      module.replacePage(a.href, setUp)
     })
   })
-}
 
-$$("nav a").forEach((a) => {
-  a.addEventListener("click", (e) => {
-    e.preventDefault()
-    history.pushState({}, "", a.href)
-    replacePage(a.href)
+  window.addEventListener("popstate", (e) => {
+    module.replacePage(window.location.pathname, setUp)
   })
 })
 
-window.addEventListener("popstate", (e) => {
-  replacePage(window.location.pathname)
-})
+setUp()
