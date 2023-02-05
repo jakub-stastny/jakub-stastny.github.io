@@ -12,14 +12,12 @@ const logo = element("img", {src: "/img/logo.png"})
 header.appendChild(logo)
 
 function resizeBackgroundImage() {
-  // logo.style.display = "block"
+  logo.style.visibility = "visible"
   // console.log(`${logo.width}x${logo.height}`)
   logo.style.width = "100%" // Fit into the header.
   header.style.height = `${logo.height}px`
   console.log(`${logo.width}x${logo.height}`)
-  // Mobile Safari doesn't like when this gets enabled.
-  // It gives it original height of 240px.
-  // logo.style.display = "none"
+  logo.style.visibility = "hidden"
 }
 
 logo.addEventListener("load", resizeBackgroundImage)
