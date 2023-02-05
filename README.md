@@ -1,6 +1,6 @@
 # About
 
-My personal web site.
+My personal web site & spiritual wiki.
 
 ## Init data
 
@@ -40,6 +40,8 @@ Run `./bin/serve` ([Babashka](https://babashka.org) is required).
 - Hero image(s).
 - Mapache.
 - https://stackoverflow.com/questions/11722442/is-there-a-way-to-use-dpi-in-css-media-queries-instead-of-px
+- Use 3 sizes: mobile (3x4 ratio), desktop (1x4) and large screen (1x4 HD). Based on this do media queries to set correct height for contain, as in we know the ratios now.
+- Use EM/EX to scale.
 
 ## Hosting
 

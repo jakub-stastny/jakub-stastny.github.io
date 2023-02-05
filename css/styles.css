@@ -27,7 +27,8 @@ table.definitions td:first-child {
 
 .question {
   font-style: italic;
-  color: dimgrey;
+  font-weight: bold;
+  color: steelblue;
 }
 
 ul.no-bullets {
