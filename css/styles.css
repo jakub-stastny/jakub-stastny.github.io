@@ -29,3 +29,12 @@ table.definitions td:first-child {
   font-style: italic;
   color: dimgrey;
 }
+
+ul.no-bullets {
+  list-style-type: none;
+}
+
+/* Pages */
+#contact-page .definitions {
+  margin: 5ex 0 0 3em;
+}

@@ -23,6 +23,12 @@ The first commit when I finally got how this should be done is `10597010` from `
 </html>
 ```
 
+## Caveats
+
+Do not put anything else into the head like `<style>`. It'd get applied only when loaded initially, but not when transitioned to your page from another component as we're using `history.pushState` rather than loading a new page.
+
+Every page transition sets `body.id` to `{your-page-name}-page`, so for instance on `/about` the `body.id` will be set to `about-page`.
+
 # Development
 
 Run `./bin/serve` ([Babashka](https://babashka.org) is required).

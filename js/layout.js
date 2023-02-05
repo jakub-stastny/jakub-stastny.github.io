@@ -37,6 +37,11 @@ function setTitle() {
   document.title = links[href] || $("main > h1").innerText
 }
 
+function setBodyID() {
+  const page = window.location.pathname.split("/").slice(-1)[0]
+  $("body").id = `${page}-page`
+}
+
 const metadata = {
   charset: "utf-8", // This doesn't work in Chrome.
   viewport: "width=device-width, initial-scale=1.0"
@@ -82,10 +87,12 @@ if (window.location.pathname.split("/")[1] === "wiki") {
 function setUp() {
   disableCurrentRouteLink()
   setTitle()
+  setBodyID()
 }
 
 /* Replace pages without re-rendering. */
 import("./replace-page.js").then((module) => {
+
   $$("nav a").forEach((a) => {
     a.addEventListener("click", (e) => {
       e.preventDefault()

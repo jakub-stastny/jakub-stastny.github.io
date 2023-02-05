@@ -6,6 +6,8 @@ export function replacePage(url, setUpPage) {
       const parser = new DOMParser()
       const fetchedDocument = parser.parseFromString(text, "text/html")
       const body = fetchedDocument.querySelector("body main")
+
+      // Replace the main body.
       $("body main").replaceWith(body)
 
       // Rerun initialiser functions.
