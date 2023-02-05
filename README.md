@@ -29,13 +29,11 @@ Run `./bin/serve` ([Babashka](https://babashka.org) is required).
 
 # TODO
 
-## Features
-
-- Large screens: "links WHITESPACE content content WHITESPACE", too long text is hard to read.
-
 ## Design
 
 - Hero image(s).
+- Mapache.
+- https://stackoverflow.com/questions/11722442/is-there-a-way-to-use-dpi-in-css-media-queries-instead-of-px
 
 ## Hosting
 
