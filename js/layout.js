@@ -80,8 +80,7 @@ function disableCurrentRouteLink() {
 
 /* Include wiki-specific CSS. */
 if (window.location.pathname.split("/")[1] === "wiki") {
-  document.head.appendChild(
-    element("link", {rel: "stylesheet", href: "/css/wiki.css"}))
+  import("./wiki.js")
 }
 
 function setUp() {
