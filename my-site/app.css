@@ -1,0 +1,17 @@
+/* Generic styles, fonts & CSS vars (that we pass explicitly to the components). */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --neutral: darkgrey;
+  }
+}
+
+/* html[data-theme='dark'] */
+@media (prefers-color-scheme: light) {
+  :root {
+    --neutral: lightgrey;
+  }
+}
+
+html {
+  font-family: Helvetica;
+}
