@@ -52,3 +52,16 @@ ul.no-bullets li {
 #contact-page .definitions {
   margin: 5ex 0 0 3em;
 }
+
+
+/* https://stackoverflow.com/questions/23236158/how-to-replicate-background-attachment-fixed-on-ios */
+#contact-page header {
+  background-image: url("/img/mapache.png"), linear-gradient(var(--header-bg-colour), #FFF);
+  background-size: contain;
+  background-attachment: fixed;
+  min-height: 500px;
+}
+
+.markdown {
+  display: none;
+}

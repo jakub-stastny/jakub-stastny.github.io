@@ -42,6 +42,7 @@ function setBodyID() {
   $("body").id = `${page}-page`
 }
 
+// TODO: check whether using charset=utf-8 RATHER than name=charset, content=utf-8 does the trick.
 const metadata = {
   charset: "utf-8", // This doesn't work in Chrome.
   viewport: "width=device-width, initial-scale=1.0"

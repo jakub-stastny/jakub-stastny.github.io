@@ -4,8 +4,41 @@
 
   No WebPack, JSX and the likes. Use Hiccup and generate plain JS.
 
-  I'd like to use Cherry, but it doesn't generate classes.
-  We need to use ShadowCLJS, because Cherry doesn't generate ES classes.
+  ShadowCLJS:
+  - Supports ES classes.
+  - Compatible with any CLJS library out there.
+    This may not be the most important thing.
+    We're only using Reitit so far and it can be replaced.
+    ACTUALLY we do use cljs.spec.alpha.
+    We need to be compatible with bm-core though!
+    Althought that shouldn't be hard even on Cherry (minus defmulti).
+  - The way it solves ES exports is infuriating, plus it doesn't really
+    do ES exports as far as I understand.
+    ? How does code splitting work with this ?
+    https://shadow-cljs.github.io/docs/UsersGuide.html#CodeSplitting
+  - ! Also supports (:require ["module-name$default" :as defaultExport])
+    import { export } from "module-name" ... (:require ["module-name" :refer (export)])
+
+  Cherry:
+  - ES6 modules, no global window-bound exports.
+  - JS object destructuring.
+  - Can run on Babashka.
+  - Async/await support.
+  - Readable output files.
+  - No dependency on Google Closure.
+  - We could use JSX (which doesn't require React by the way
+    https://dev.to/devsmitra/how-to-create-the-app-using-jsx-without-react-k08
+    and https://github.com/developit/vhtml).
+    On the other hand, we would have to transpile it again, for that
+    reason hiccup is prefered.
+  - Hot reloading via JS tooling.
+  - https://github.com/squint-cljs/cherry/issues/97
+
+  Squint:
+  - 5kb, some features same as in Cherry.
+  - No stdlib I think.
+
+  Bun https://bun.sh.
 
   CSS should be separated rather than inline (if can be avoided).
   Thanks to tangling, we can just insert it from a CSS source block
