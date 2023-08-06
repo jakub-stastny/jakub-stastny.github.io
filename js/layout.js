@@ -24,10 +24,8 @@ logo.addEventListener("load", resizeBackgroundImage)
 window.addEventListener("resize", resizeBackgroundImage)
 
 // Navigation links.
-// TODO: Shorten for small displays, it doesn't fit on one line (Astrology readings -> Readings etc)
 const links = {
   "/about": "About me",
-  "/astrology-reading": "Astrology reading",
   "/wiki": "Wiki",
   "/contact": "Contact",
 }
